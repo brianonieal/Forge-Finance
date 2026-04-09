@@ -4,20 +4,21 @@
 
 ---
 
-## CURRENT GATE: v1.0.0 — "Genesis" (Launch)
+## CURRENT GATE: v2.0.0 — "Horizon" (Reports + Alerts)
 
-**Purpose:** Public MVP launch with landing page and waitlist
-**Est:** 10 hrs | Calibrated: 1.0 hrs AI-assisted
+**Purpose:** Reports & analytics + alerts & notifications
+**Est:** 16 hrs | Calibrated: 1.0 hrs AI-assisted
 
 ---
 
 ## DELIVERABLES
 
-- [ ] Screen 1: Landing Page — / (hero, features grid, pricing, waitlist signup)
-- [ ] Full QA pass across all screens
-- [ ] All 124+ tests passing
-- [ ] Handoff documentation
-- [ ] Tests: 124+ cumulative (maintain passing)
+- [ ] Screen 13: Reports & Analytics — /reports (monthly summary, spending by category, income vs expenses)
+- [ ] Screen 16: Alerts & Notifications — /alerts (notification feed, filter chips, mark read, dismiss)
+- [ ] Reports API: GET /api/reports/monthly-summary, /api/reports/category-trends
+- [ ] Alerts API: GET /api/alerts, PATCH /api/alerts/:id/read, POST /api/alerts/:id/dismiss, POST /api/alerts/mark-all-read
+- [ ] Bell icon with unread count in navigation
+- [ ] Tests: 149+ cumulative
 
 ---
 
@@ -25,17 +26,18 @@
 
 | # | Screen | Route | Notes |
 |---|--------|-------|-------|
-| 1 | Landing Page | / | Hero, features, pricing, waitlist |
+| 13 | Reports & Analytics | /reports | Monthly summary, category trends |
+| 16 | Alerts & Notifications | /alerts | Notification feed with filters |
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. Hero section: "Your finances, explained by AI." headline, waitlist CTA
-2. Features grid: 3 cards (Conversational AI, Real-Time Sync, Smart Budgets & Goals)
-3. Pricing section: Free vs Pro tier comparison
-4. Waitlist signup form with email input and success state
-5. Landing page is pre-auth (no login required)
-6. Root / route shows landing page (not redirect to /dashboard)
-7. All financial amounts use JetBrains Mono
-8. All existing tests continue to pass
+1. Reports page shows monthly income vs expenses comparison
+2. Category spending trends with BarChart visualization
+3. Alerts feed shows chronological notifications newest-first
+4. Filter chips: All, AI Insights, Budget Alerts, Goals, Sync Status, System
+5. Mark as read (individual + all), dismiss notifications
+6. Unread indicator (blue dot) on unread notifications
+7. Empty state: "All caught up!" message
+8. All financial amounts use JetBrains Mono

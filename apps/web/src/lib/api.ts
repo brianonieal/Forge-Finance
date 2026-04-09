@@ -121,6 +121,22 @@ export const api = {
         method: 'DELETE',
       }),
   },
+  reports: {
+    getMonthlySummary: (months = 6) =>
+      apiFetch<ReportMonthlySummary>(`/api/reports/monthly-summary?months=${months}`),
+    getCategoryTrends: (months = 3) =>
+      apiFetch<ReportCategoryTrends>(`/api/reports/category-trends?months=${months}`),
+  },
+  alerts: {
+    list: (filterType = 'all') =>
+      apiFetch<AlertListResponse>(`/api/alerts?filter_type=${filterType}`),
+    markRead: (id: string) =>
+      apiFetch<{ status: string }>(`/api/alerts/${id}/read`, { method: 'PATCH' }),
+    dismiss: (id: string) =>
+      apiFetch<{ status: string }>(`/api/alerts/${id}/dismiss`, { method: 'POST' }),
+    markAllRead: () =>
+      apiFetch<{ status: string }>('/api/alerts/mark-all-read', { method: 'POST' }),
+  },
   oracle: {
     query: (query: string, conversationId?: string) =>
       fetch(`${API_BASE}/api/oracle/query`, {
@@ -275,6 +291,45 @@ export interface GoalUpdateInput {
   current_amount?: number;
   deadline?: string;
   status?: string;
+}
+
+export interface ReportMonthItem {
+  year: number;
+  month: number;
+  income: number;
+  expenses: number;
+  net: number;
+}
+
+export interface ReportMonthlySummary {
+  months: ReportMonthItem[];
+}
+
+export interface ReportCategoryItem {
+  category: string;
+  total: number;
+  count: number;
+}
+
+export interface ReportCategoryTrends {
+  categories: ReportCategoryItem[];
+}
+
+export interface AlertItem {
+  id: string;
+  type: 'budget' | 'goal' | 'sync' | 'system' | 'ai';
+  severity: 'info' | 'warning' | 'critical' | 'success';
+  title: string;
+  description: string;
+  is_read: boolean;
+  timestamp: string;
+  link: string;
+}
+
+export interface AlertListResponse {
+  alerts: AlertItem[];
+  total: number;
+  unread: number;
 }
 
 export interface PlaidAccount {

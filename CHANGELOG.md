@@ -4,6 +4,33 @@
 
 ---
 
+## [2.0.0] "Horizon" — 2026-04-09
+
+### Added
+- Screen 13 — Reports & Analytics: /reports with monthly income vs expenses BarChart
+  - Summary cards: Total Income, Total Expenses, Net (JetBrains Mono)
+  - Horizontal BarChart for category spending breakdown with transaction counts
+  - Category legend with color dots and dollar amounts
+- Screen 16 — Alerts & Notifications: /alerts with chronological notification feed
+  - Filter chips: All, AI Insights, Budget Alerts, Goals, Sync Status, System
+  - Alert cards with type icons, severity border colors, unread dot indicator
+  - Mark as read (click), dismiss (X button), Mark All as Read
+  - Empty state: "All caught up!" with checkmark icon
+  - Time-relative timestamps ("2 hours ago")
+  - View Details links navigate to relevant screens
+- Reports API: GET /api/reports/monthly-summary, GET /api/reports/category-trends
+  - Monthly income vs expenses aggregation from transactions
+  - Category spending totals with transaction counts
+- Alerts API: GET /api/alerts, PATCH /:id/read, POST /:id/dismiss, POST /mark-all-read
+  - Dynamic alert generation from budget/goal state
+  - Budget threshold alerts (70%, 90%, 100%)
+  - Goal milestone alerts (25%, 50%, 75%, 100%)
+  - In-memory read/dismiss tracking for MVP
+- Navigation sidebar: Reports and Alerts ungated (previously grayed with "Coming in v2.0.0")
+- 154 tests passing (92 backend + 62 frontend)
+
+---
+
 ## [1.0.0] "Genesis" — 2026-04-09
 
 ### Added

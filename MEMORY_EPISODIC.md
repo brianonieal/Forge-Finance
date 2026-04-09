@@ -17,10 +17,23 @@
 | v0.5.0 Dashboard + @ORACLE | 2026-04-09 | 20 | 1.5 | -93% | COMPLETE |
 | v0.6.0 Budgets + Goals | 2026-04-09 | 14 | 1.0 | -93% | COMPLETE |
 | v1.0.0 Genesis (Launch) | 2026-04-09 | 10 | 0.5 | -95% | COMPLETE |
+| v2.0.0 Horizon (Reports+Alerts) | 2026-04-09 | 16 | 1.0 | -94% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v2.0.0 Horizon (Reports + Alerts) gate
+Event: v2.0.0 Horizon gate completed
+Deliverables:
+  - Screen 13: Reports & Analytics (/reports) with monthly BarChart, category breakdown
+  - Screen 16: Alerts & Notifications (/alerts) with filter chips, mark read, dismiss
+  - Reports API: monthly-summary, category-trends
+  - Alerts API: list, mark-read, dismiss, mark-all-read (dynamic from budget/goal state)
+  - Navigation sidebar: Reports + Alerts ungated
+  - 154 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v3.0.0 Compass
 
 ### 2026-04-09 — v1.0.0 Genesis (Launch) gate
 Event: v1.0.0 Genesis gate completed

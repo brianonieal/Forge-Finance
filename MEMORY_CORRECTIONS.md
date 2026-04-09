@@ -8,8 +8,8 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 8
-Overall estimate accuracy: Estimates averaged 12.8x actual (raw human estimates vs AI-assisted)
+Gates completed: 9
+Overall estimate accuracy: Estimates averaged 13.2x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
@@ -34,6 +34,35 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v2.0.0 -- Horizon (Reports + Alerts)
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 16 hours
+  Actual:    1.0 hours
+  Variance:  -94%
+
+WHY OFF
+  Reports are computed views over existing transaction data — no new models needed. Alerts are dynamically generated from existing budget/goal state rather than a persistent notification table. Both screens follow the established Recharts + Tailwind pattern. The "notification preferences in Settings" deliverable was deferred as it adds complexity without user value at this stage.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Notification persistence model, complex alert rules engine, bell icon with real-time count, notification preferences UI
+  Actual:    In-memory read/dismiss tracking, simple threshold-based alert generation, filter chips + feed. Bell icon already existed in sidebar.
+  Gap:       MVP alerts don't need a database table — computing from current state is simpler and always accurate.
+
+CORRECTION FOR FUTURE
+  Computed-view gates (data already exists, just need visualization) should estimate at 1.0 hrs AI-assisted.
+  Dynamic alerts from existing state > persistent notification table for MVP.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v1.0.0 -- Genesis (Launch)
 

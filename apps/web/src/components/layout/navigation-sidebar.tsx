@@ -35,10 +35,10 @@ const navItems: NavItem[] = [
   { label: "Budgets", href: "/budgets", icon: PiggyBank },
   { label: "Goals", href: "/goals", icon: Target },
   { label: "Chat", href: "/chat", icon: MessageSquare },
-  { label: "Reports", href: "/reports", icon: BarChart3, gate: "v2.0.0" },
+  { label: "Reports", href: "/reports", icon: BarChart3 },
   { label: "Investments", href: "/investments", icon: TrendingUp, gate: "v3.0.0" },
   { label: "Net Worth", href: "/net-worth", icon: CreditCard, gate: "v3.0.0" },
-  { label: "Alerts", href: "/alerts", icon: Bell, gate: "v2.0.0" },
+  { label: "Alerts", href: "/alerts", icon: Bell },
 ];
 
 export function NavigationSidebar() {

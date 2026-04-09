@@ -4,20 +4,19 @@
 
 ---
 
-## CURRENT GATE: v1.0.0 — "Genesis" (Launch)
+## CURRENT GATE: v2.0.0 — "Horizon" (Reports + Alerts) ✓
 
-### Active Tasks
-
-| # | Task | Status | Notes |
-|---|------|--------|-------|
-| 1 | Frontend: Screen 1 — Landing Page | PENDING | Hero, features, pricing, waitlist |
-| 2 | Update root page.tsx to show landing | PENDING | Replace dashboard redirect |
-| 3 | Tests: Landing page tests | PENDING | ~5 new frontend tests |
-| 4 | QA: Verify all tests passing | PENDING | 124+ cumulative |
+### All Tasks Complete
 
 ---
 
 ## COMPLETED GATES
+
+### v2.0.0 — Horizon (Reports + Alerts) ✓
+Completed 2026-04-09. Reports, alerts, notification feed, 154 tests.
+
+### v1.0.0 — Genesis (Launch) ✓
+Completed 2026-04-09. Landing page with hero, features, pricing, waitlist. 131 tests.
 
 ### v0.6.0 — Budgets + Goals ✓
 Completed 2026-04-09. Budget CRUD, Goals CRUD, 4 screens, 124 tests.

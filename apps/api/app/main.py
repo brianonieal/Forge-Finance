@@ -3,18 +3,20 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.database import engine
+from app.routers.alerts import router as alerts_router
 from app.routers.budgets import router as budgets_router
 from app.routers.dashboard import router as dashboard_router
 from app.routers.goals import router as goals_router
 from app.routers.oracle import router as oracle_router
 from app.routers.plaid import router as plaid_router
+from app.routers.reports import router as reports_router
 from app.routers.plaid import webhook_router
 from app.routers.settings import router as settings_router
 from app.routers.transactions import router as transactions_router
 
 app = FastAPI(
     title="Forge Finance API",
-    version="0.6.0",
+    version="2.0.0",
     docs_url="/docs" if settings.debug else None,
     redoc_url=None,
 )
@@ -36,6 +38,8 @@ app.include_router(transactions_router)
 app.include_router(oracle_router)
 app.include_router(budgets_router)
 app.include_router(goals_router)
+app.include_router(reports_router)
+app.include_router(alerts_router)
 
 
 @app.get("/health")
@@ -51,6 +55,6 @@ async def health_check():
 
     return {
         "status": "healthy",
-        "version": "0.6.0",
+        "version": "2.0.0",
         "database": db_status,
     }

@@ -16,11 +16,18 @@
 | v0.5.0 | 20 | 1.5 | -93% | $225 |
 | v0.6.0 | 14 | 1.0 | -93% | $150 |
 | v1.0.0 | 10 | 0.5 | -95% | $75 |
-| **Total** | **96** | **7.5** | **-92%** | **$1,125** |
+| v2.0.0 | 16 | 1.0 | -94% | $150 |
+| **Total** | **112** | **8.5** | **-92%** | **$1,275** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 6 (v2.0.0)
+- Start: session begin
+- Duration: ~1.0 hrs
+- Gates completed: v2.0.0
+- Notes: Reports (monthly summary + category trends) + Alerts (notification feed with filters). Dynamic alert generation from budget/goal state. Sidebar ungated. 154 tests passing.
 
 ### 2026-04-09 — Session 5 (v1.0.0)
 - Start: session begin
