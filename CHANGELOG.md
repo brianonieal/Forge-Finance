@@ -4,6 +4,26 @@
 
 ---
 
+## [0.4.0] — 2026-04-09
+
+### Added
+- Plaid Link integration: create-link-token and exchange-public-token endpoints
+- @SYNC agent: cursor-based incremental transaction sync with deduplication
+- Plaid webhook handler (HISTORICAL_UPDATE, TRANSACTIONS_SYNC, ITEM_LOGIN_REQUIRED)
+- Webhook signature verification middleware (sandbox passthrough, production JWT)
+- Voyage AI embedding pipeline: batch processing (50/batch), dimension validation (1024)
+- Daily cron fallback sync architecture (ERR-PLAID-001)
+- Exponential backoff with jitter for Plaid/Voyage rate limiting (ERR-PLAID-005, ERR-VOYAGE-002)
+- Screen 3 — Onboarding Wizard: /onboarding (4-step flow: welcome, Plaid Link, syncing, complete)
+- Screen 5 — Accounts: /accounts (account cards with balance, type, institution, connection status)
+- Empty state for accounts page with connect CTA
+- Plaid Link update mode support for expired items (ERR-PLAID-004)
+- API client module (apps/web/src/lib/api.ts) with typed Plaid endpoints
+- usePlaidConnect hook wrapping react-plaid-link
+- 52 tests passing (10 new: 5 Plaid router, 5 sync/embedding, 6 frontend)
+
+---
+
 ## [0.3.0] — 2026-04-09
 
 ### Added

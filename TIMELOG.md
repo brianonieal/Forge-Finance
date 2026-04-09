@@ -12,11 +12,18 @@
 | v0.1.0 | 8 | 0.75 | -91% | $112 |
 | v0.2.0 | 10 | 0.75 | -93% | $112 |
 | v0.3.0 | 10 | 1.0 | -90% | $150 |
-| **Total** | **34** | **3.5** | **-90%** | **$525** |
+| v0.4.0 | 18 | 1.0 | -94% | $150 |
+| **Total** | **52** | **4.5** | **-91%** | **$675** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 2 (v0.4.0)
+- Start: session begin
+- Duration: ~1.0 hrs
+- Gates completed: v0.4.0
+- Notes: Plaid integration + @SYNC agent + Voyage AI embeddings. 52 tests passing. Plaid buffer was not needed — managed SDK integration was straightforward with AI assistance.
 
 ### 2026-04-09 — Session 1 (v0.0.0 through v0.3.0)
 - Start: session begin

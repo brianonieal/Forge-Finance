@@ -8,10 +8,11 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 4
-Overall estimate accuracy: Estimates averaged 9.7x actual (raw human estimates vs AI-assisted)
+Gates completed: 5
+Overall estimate accuracy: Estimates averaged 11.6x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
+Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
 
 ---
 
@@ -31,6 +32,36 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v0.4.0 -- Plaid + @SYNC
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 18 hours (12 raw + 50% Plaid buffer)
+  Actual:    1.0 hours
+  Variance:  -94%
+
+WHY OFF
+  The +50% Plaid buffer assumed manual API integration, webhook debugging, and sandbox reliability issues. In practice, the plaid-python SDK handles all complexity, and AI-assisted code generation produced the entire sync pipeline (cursor-based sync, dedup, embedding pipeline) in a single pass.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Plaid sandbox webhook delivery issues, dedup edge cases, Voyage AI rate limiting
+  Actual:    SDK abstracted all Plaid complexity; dedup was a simple unique constraint check; embedding pipeline was straightforward HTTP calls
+  Gap:       Pre-build calibration assumed Plaid integration would be the hardest gate — with managed SDKs and AI generation, it's comparable to other gates
+
+CORRECTION FOR FUTURE
+  Plaid buffer of +50% is NOT needed for AI-assisted builds with managed SDK.
+  Estimate Plaid gates at 1.0-1.5 hrs AI-assisted, same as other integration gates.
+  The pre-build calibration for "Plaid gates: budget +50%" should be revised downward.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: Plaid buffer calibration invalidated
+  Estimate buffer added: no — buffer removed
+
+---
 
 ### REFLEXION: v0.3.0 -- Auth
 

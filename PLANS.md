@@ -4,25 +4,29 @@
 
 ---
 
-## CURRENT GATE: v0.3.0 — Auth
+## CURRENT GATE: v0.4.0 — Plaid + @SYNC
 
 ### Active Tasks
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1 | Supabase client setup (frontend + backend) | PENDING | |
-| 2 | useAuthStore (Zustand) | PENDING | |
-| 3 | Auth pages (login, register, reset) | PENDING | Screen 2 |
-| 4 | Protected route wrapper | PENDING | |
-| 5 | Settings pages (5 sub-pages) | PENDING | Screen 17 |
-| 6 | FastAPI auth middleware | PENDING | |
-| 7 | Settings API endpoints | PENDING | |
-| 8 | Tests | PENDING | |
-| 9 | Gate close checklist | PENDING | |
+| 1 | Backend: Plaid service module | PENDING | create_link_token, exchange, sync |
+| 2 | Backend: Plaid router (4 endpoints) | PENDING | |
+| 3 | Backend: @SYNC agent (cursor sync, dedup, webhooks) | PENDING | |
+| 4 | Backend: Webhook signature verification | PENDING | |
+| 5 | Backend: Voyage AI embedding pipeline | PENDING | |
+| 6 | Backend: Daily cron fallback | PENDING | |
+| 7 | Frontend: Plaid Link integration | PENDING | react-plaid-link |
+| 8 | Frontend: Screen 3 — Onboarding Wizard | PENDING | 4 steps |
+| 9 | Frontend: Screen 5 — Accounts page | PENDING | |
+| 10 | Tests: Plaid + sync + frontend | PENDING | Target: 50 cumulative |
 
 ---
 
 ## COMPLETED GATES
+
+### v0.3.0 — Auth ✓
+Completed 2026-04-09. Supabase Auth, Settings pages, 36 tests.
 
 ### v0.2.0 — Data Layer ✓
 Completed 2026-04-09. 9 models, Alembic migration, RLS, 29 tests.

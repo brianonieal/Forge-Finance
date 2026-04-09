@@ -13,10 +13,25 @@
 | v0.1.0 Scaffold | 2026-04-09 | 8 | 0.75 | -91% | COMPLETE |
 | v0.2.0 Data Layer | 2026-04-09 | 10 | 0.75 | -93% | COMPLETE |
 | v0.3.0 Auth | 2026-04-09 | 10 | 1.0 | -90% | COMPLETE |
+| v0.4.0 Plaid + @SYNC | 2026-04-09 | 18 | 1.0 | -94% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v0.4.0 Plaid + @SYNC gate
+Event: v0.4.0 Plaid + @SYNC gate completed
+Deliverables:
+  - Plaid Link integration (create-link-token, exchange-public-token)
+  - @SYNC agent: cursor-based sync, dedup on plaid_transaction_id, webhook handler
+  - Webhook signature verification middleware
+  - Voyage AI embedding pipeline (batch, dimension validation)
+  - Screen 3: Onboarding Wizard (/onboarding, 4 steps)
+  - Screen 5: Accounts (/accounts, cards + connect + empty state)
+  - ERR-PLAID-001 through ERR-PLAID-005 mitigations built in
+  - 52 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.5.0 Dashboard + @ORACLE
 
 ### 2026-04-09 — v0.3.0 Auth gate
 Event: v0.3.0 Auth gate completed
