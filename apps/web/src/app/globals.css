@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ============================================
+   FORGE FINANCE DESIGN TOKENS
+   Bloomberg-inspired dark theme
+   Source: DESIGN_SYSTEM.md
+   ============================================ */
+
+:root {
+  /* Backgrounds */
+  --color-bg-base: #0A0E1A;
+  --color-bg-surface: #0F1629;
+  --color-bg-elevated: #1A2035;
+  --color-bg-overlay: rgba(255, 255, 255, 0.05);
+
+  /* Brand */
+  --color-brand-primary: #2E6DB4;
+  --color-brand-accent: #C8A855;
+
+  /* Financial */
+  --color-gain: #00C48C;
+  --color-loss: #FF4D4D;
+
+  /* Text */
+  --color-text-primary: #E8EDF5;
+  --color-text-secondary: #8B96A8;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Light mode overrides (sidebar stays dark) */
+[data-theme="light"] {
+  --color-bg-base: #F4F6FA;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-text-primary: #0A0E1A;
+  --color-text-secondary: #5A6478;
+}
+
+@theme inline {
+  /* Colors */
+  --color-bg-base: var(--color-bg-base);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-overlay: var(--color-bg-overlay);
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-accent: var(--color-brand-accent);
+  --color-gain: var(--color-gain);
+  --color-loss: var(--color-loss);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* JetBrains Mono for all financial figures — mandatory, no exceptions */
+.font-money {
+  font-family: var(--font-mono), monospace;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}

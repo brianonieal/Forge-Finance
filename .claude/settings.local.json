@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --version)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm dlx:*)",
+      "Bash(python -m venv .venv)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(npx next:*)",
+      "Bash(.venv/Scripts/python -c \"from app.main import app; print\\('FastAPI app loaded:', app.title, app.version\\)\")",
+      "Bash(timeout 5 .venv/Scripts/uvicorn app.main:app --host 127.0.0.1 --port 8000)",
+      "Bash(curl -s http://127.0.0.1:8000/health)",
+      "Bash(.venv/Scripts/uvicorn app.main:app --host 127.0.0.1 --port 8001)",
+      "Bash(curl -s http://127.0.0.1:8001/health)",
+      "Bash(kill %1)"
+    ]
+  }
+}
