@@ -4,6 +4,21 @@
 
 ---
 
+## [1.0.0] "Genesis" — 2026-04-09
+
+### Added
+- Screen 1 — Landing Page: / with hero section, features grid, pricing comparison, waitlist signup
+  - Hero: "Your finances, explained by AI." headline with gradient background
+  - Features grid: Conversational AI, Real-Time Sync, Smart Budgets & Goals (3-col desktop, 1-col mobile)
+  - Pricing section: Free ($0) vs Pro ($9/month) tier comparison with feature lists
+  - Waitlist email signup form with success state ("You're on the list!")
+  - Privacy note: "We'll never share your email."
+  - Footer with copyright
+- Root / now shows landing page instead of redirect to /dashboard
+- 131 tests passing (82 backend + 49 frontend)
+
+---
+
 ## [0.6.0] — 2026-04-09
 
 ### Added

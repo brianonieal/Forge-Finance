@@ -8,8 +8,8 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 7
-Overall estimate accuracy: Estimates averaged 12.3x actual (raw human estimates vs AI-assisted)
+Gates completed: 8
+Overall estimate accuracy: Estimates averaged 12.8x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
@@ -34,6 +34,36 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v1.0.0 -- Genesis (Launch)
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 10 hours
+  Actual:    0.5 hours
+  Variance:  -95%
+
+WHY OFF
+  v1.0.0 is a single static landing page with no backend work, no data fetching, no API integration. Pure JSX + Tailwind with a simple form state toggle. The 10 hr estimate included "full QA pass" and "production deploy" which were either trivial or deferred.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Landing page design iteration, waitlist backend integration, production deploy, Sentry setup
+  Actual:    Zero design iteration (spec was fully decided in FRONTEND_SPEC.md), waitlist is client-side state only, deploy and Sentry are separate ops tasks
+  Gap:       Static pages are the fastest gate type. No novel patterns, no API integration, no charts.
+
+CORRECTION FOR FUTURE
+  Static/marketing page gates should estimate at 0.5 hrs AI-assisted.
+  "QA pass" on already-tested code is not a separate task — tests are the QA.
+  Production deploy is an ops task, not a build task — estimate separately.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v0.6.0 -- Budgets + Goals
 

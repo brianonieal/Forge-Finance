@@ -16,10 +16,20 @@
 | v0.4.0 Plaid + @SYNC | 2026-04-09 | 18 | 1.0 | -94% | COMPLETE |
 | v0.5.0 Dashboard + @ORACLE | 2026-04-09 | 20 | 1.5 | -93% | COMPLETE |
 | v0.6.0 Budgets + Goals | 2026-04-09 | 14 | 1.0 | -93% | COMPLETE |
+| v1.0.0 Genesis (Launch) | 2026-04-09 | 10 | 0.5 | -95% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v1.0.0 Genesis (Launch) gate
+Event: v1.0.0 Genesis gate completed
+Deliverables:
+  - Screen 1: Landing Page (/) with hero, features grid, pricing, waitlist signup
+  - Root route changed from /dashboard redirect to landing page
+  - 131 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v2.0.0 Horizon
 
 ### 2026-04-09 — v0.6.0 Budgets + Goals gate
 Event: v0.6.0 Budgets + Goals gate completed

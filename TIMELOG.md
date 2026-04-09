@@ -15,11 +15,18 @@
 | v0.4.0 | 18 | 1.0 | -94% | $150 |
 | v0.5.0 | 20 | 1.5 | -93% | $225 |
 | v0.6.0 | 14 | 1.0 | -93% | $150 |
-| **Total** | **86** | **7.0** | **-92%** | **$1,050** |
+| v1.0.0 | 10 | 0.5 | -95% | $75 |
+| **Total** | **96** | **7.5** | **-92%** | **$1,125** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 5 (v1.0.0)
+- Start: session begin
+- Duration: ~0.5 hrs
+- Gates completed: v1.0.0
+- Notes: Landing page with hero, features grid, pricing, waitlist. Simplest gate — single static page. 131 tests passing.
 
 ### 2026-04-09 — Session 4 (v0.6.0)
 - Start: session begin

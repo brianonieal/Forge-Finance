@@ -4,26 +4,23 @@
 
 ---
 
-## CURRENT GATE: v0.6.0 — Budgets + Goals
+## CURRENT GATE: v1.0.0 — "Genesis" (Launch)
 
 ### Active Tasks
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1 | Backend: Budget CRUD router (5 endpoints) | PENDING | GET/POST list, GET/PATCH/DELETE detail |
-| 2 | Backend: Goal CRUD router (5 endpoints) | PENDING | GET/POST list, GET/PATCH/DELETE detail |
-| 3 | Backend: Register routers in main.py | PENDING | + version bump to 0.6.0 |
-| 4 | Frontend: api.ts budget/goal methods | PENDING | CRUD client methods |
-| 5 | Frontend: Screen 8 — Budgets | PENDING | Health ring, category progress bars |
-| 6 | Frontend: Screen 9 — Budget Detail | PENDING | /budgets/:id, spending trend |
-| 7 | Frontend: Screen 10 — Goals | PENDING | Goal cards grid, celebration modal |
-| 8 | Frontend: Screen 11 — Goal Detail | PENDING | /goals/:id, contribution chart |
-| 9 | Tests: Backend (budget + goal routers) | PENDING | ~10 new backend tests |
-| 10 | Tests: Frontend (4 screen tests) | PENDING | ~25 new frontend tests |
+| 1 | Frontend: Screen 1 — Landing Page | PENDING | Hero, features, pricing, waitlist |
+| 2 | Update root page.tsx to show landing | PENDING | Replace dashboard redirect |
+| 3 | Tests: Landing page tests | PENDING | ~5 new frontend tests |
+| 4 | QA: Verify all tests passing | PENDING | 124+ cumulative |
 
 ---
 
 ## COMPLETED GATES
+
+### v0.6.0 — Budgets + Goals ✓
+Completed 2026-04-09. Budget CRUD, Goals CRUD, 4 screens, 124 tests.
 
 ### v0.5.0 — Dashboard + @ORACLE ✓
 Completed 2026-04-09. Dashboard, transactions, @ORACLE chat, 84 tests.
