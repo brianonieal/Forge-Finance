@@ -1,8 +1,16 @@
+import sentry_sdk
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.database import engine
+
+if settings.sentry_dsn:
+    sentry_sdk.init(
+        dsn=settings.sentry_dsn,
+        traces_sample_rate=0.1,
+        environment="production" if not settings.debug else "development",
+    )
 from app.routers.alerts import router as alerts_router
 from app.routers.budgets import router as budgets_router
 from app.routers.dashboard import router as dashboard_router

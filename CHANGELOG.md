@@ -4,6 +4,21 @@
 
 ---
 
+## [1.0.0] "Genesis" — 2026-04-09
+
+### Added
+- Sentry error tracking: @sentry/nextjs (frontend) + sentry-sdk (backend)
+  - sentry.client.config.ts, sentry.server.config.ts, sentry.edge.config.ts
+  - FastAPI Sentry init in main.py (conditional on SENTRY_DSN)
+  - next.config.ts wrapped with withSentryConfig
+- NEXT_PUBLIC_API_URL defaults to Render production URL
+- CORS origins updated to include Vercel production domain
+- render.yaml for Render auto-deploy (committed in prior session)
+- Environment variable documentation for Vercel (4 vars) and Render (13 vars)
+- 218 tests passing (116 backend + 102 frontend)
+
+---
+
 ## [4.0.0] "Forge" — 2026-04-09
 
 ### Added

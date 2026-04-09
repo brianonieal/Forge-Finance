@@ -4,38 +4,38 @@
 
 ---
 
-## CURRENT GATE: v4.0.0 — "Forge" (Performance + Accessibility + Beta)
+## CURRENT GATE: v1.0.0 — "Genesis" (Production Deploy + QA)
 
-**Purpose:** Performance, accessibility, 2FA, beta access
-**Est:** 12 hrs | Calibrated: 1.0 hrs AI-assisted
+**Purpose:** Production deploy, QA pass, launch readiness
+**Est:** 10 hrs | Calibrated: 1.0 hrs AI-assisted
 
 ---
 
 ## DELIVERABLES
 
-- [x] 2FA implementation in /settings/security (TOTP setup flow with QR code)
-- [x] Accessibility: skip-nav, aria-labels, focus-visible outlines, reduced motion
-- [x] Performance: focus-visible outlines, prefers-reduced-motion, semantic landmarks
-- [x] Beta access program: invite-only gate with access code entry (BetaGate component)
-- [x] API: GET/POST/DELETE /api/settings/2fa/*, POST /api/settings/beta-access
-- [x] Version bump to 4.0.0
-- [x] Tests: 218 cumulative (116 backend + 102 frontend)
+- [x] Landing page QA pass
+- [ ] Production deploy: Vercel (frontend) + Render (backend) — pending env vars
+- [x] Sentry error tracking configured (placeholder DSNs)
+- [x] render.yaml created
+- [ ] All environment variables set in Vercel and Render — listed, manual setup pending
+- [x] NEXT_PUBLIC_API_URL updated to Render placeholder
+- [x] Full QA pass across all screens (local)
 
 ---
 
 ## SCREENS
 
-No new screens. Enhancements to existing screens.
+No new screens. QA + deploy for all existing screens.
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. 2FA enable/disable flow works with TOTP (authenticator app)
-2. Skip navigation link visible on focus, jumps to main content
-3. All interactive elements have visible focus indicators
-4. Chart-heavy pages use dynamic imports (no SSR for Recharts)
-5. Beta access code required for new signups
-6. All financial amounts remain in JetBrains Mono
-7. All existing tests continue to pass
-8. 218+ cumulative tests
+1. Landing page renders correctly on production Vercel URL
+2. Backend health endpoint returns 200 on production Render URL
+3. Sentry captures errors in both frontend and backend
+4. NEXT_PUBLIC_API_URL points to live Render backend
+5. All environment variables configured in Vercel dashboard
+6. All environment variables configured in Render dashboard
+7. Full QA pass: all screens load, no console errors, no broken layouts
+8. All existing tests continue to pass
