@@ -4,6 +4,33 @@
 
 ---
 
+## [3.0.0] "Compass" — 2026-04-09
+
+### Added
+- Screen 14 — Investments Dashboard: /investments with portfolio overview
+  - Summary cards: Portfolio Value, Total Gain/Loss (with trend icon), Accounts count
+  - Performance AreaChart with gradient fill (green #00C48C)
+  - Asset Allocation PieChart (donut) with legend showing type percentages
+  - Holdings table: Account, Institution, Type, Balance columns
+  - Empty states for no-data scenarios
+- Screen 15 — Net Worth Tracker: /net-worth with financial health overview
+  - Summary cards: Total Assets (green), Total Liabilities (red), Net Worth (blue with trend icon)
+  - Net Worth Over Time AreaChart with gradient fill (primary blue #2E6DB4)
+  - Account breakdown: 2-col grid with Assets and Liabilities sections
+  - Each account shows name, institution/type, and balance with color coding
+  - Empty states for no accounts linked
+- Investments API: GET /api/investments/holdings, GET /api/investments/performance
+  - Holdings aggregated from investment/brokerage/401k/IRA account types
+  - Allocation computed by subtype with percentage breakdown
+  - Performance built from cumulative transaction history
+- Net Worth API: GET /api/net-worth/summary, GET /api/net-worth/trend
+  - Asset/liability classification by account type
+  - Trend computed from cumulative daily transaction totals
+- Version bumped to 3.0.0 (main.py + health endpoint)
+- 177 tests passing (101 backend + 76 frontend)
+
+---
+
 ## [2.0.0] "Horizon" — 2026-04-09
 
 ### Added

@@ -4,21 +4,21 @@
 
 ---
 
-## CURRENT GATE: v2.0.0 — "Horizon" (Reports + Alerts)
+## CURRENT GATE: v3.0.0 — "Compass" (Investments + Net Worth)
 
-**Purpose:** Reports & analytics + alerts & notifications
-**Est:** 16 hrs | Calibrated: 1.0 hrs AI-assisted
+**Purpose:** Investment portfolio view + net worth tracking
+**Est:** 14 hrs | Calibrated: 1.0 hrs AI-assisted
 
 ---
 
 ## DELIVERABLES
 
-- [ ] Screen 13: Reports & Analytics — /reports (monthly summary, spending by category, income vs expenses)
-- [ ] Screen 16: Alerts & Notifications — /alerts (notification feed, filter chips, mark read, dismiss)
-- [ ] Reports API: GET /api/reports/monthly-summary, /api/reports/category-trends
-- [ ] Alerts API: GET /api/alerts, PATCH /api/alerts/:id/read, POST /api/alerts/:id/dismiss, POST /api/alerts/mark-all-read
-- [ ] Bell icon with unread count in navigation
-- [ ] Tests: 149+ cumulative
+- [x] Screen 14: Investments Dashboard — /investments (holdings table, allocation pie, performance chart)
+- [x] Screen 15: Net Worth Tracker — /net-worth (assets vs liabilities, trend chart, account breakdown)
+- [x] Investments API: GET /api/investments/holdings, GET /api/investments/performance
+- [x] Net Worth API: GET /api/net-worth/summary, GET /api/net-worth/trend
+- [x] Navigation sidebar: Investments + Net Worth ungated
+- [x] Tests: 177 cumulative (101 backend + 76 frontend)
 
 ---
 
@@ -26,18 +26,18 @@
 
 | # | Screen | Route | Notes |
 |---|--------|-------|-------|
-| 13 | Reports & Analytics | /reports | Monthly summary, category trends |
-| 16 | Alerts & Notifications | /alerts | Notification feed with filters |
+| 14 | Investments Dashboard | /investments | Holdings, allocation, performance |
+| 15 | Net Worth Tracker | /net-worth | Assets vs liabilities, trend |
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. Reports page shows monthly income vs expenses comparison
-2. Category spending trends with BarChart visualization
-3. Alerts feed shows chronological notifications newest-first
-4. Filter chips: All, AI Insights, Budget Alerts, Goals, Sync Status, System
-5. Mark as read (individual + all), dismiss notifications
-6. Unread indicator (blue dot) on unread notifications
-7. Empty state: "All caught up!" message
-8. All financial amounts use JetBrains Mono
+1. Holdings table shows account-derived investment positions with balances
+2. Allocation PieChart shows distribution across account types
+3. Performance AreaChart shows portfolio value over time
+4. Net worth summary shows total assets, liabilities, and net worth
+5. Net worth trend AreaChart shows historical net worth
+6. Account breakdown lists all accounts grouped by type (asset/liability)
+7. All financial amounts use JetBrains Mono
+8. All existing tests continue to pass

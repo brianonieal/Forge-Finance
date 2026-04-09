@@ -18,10 +18,23 @@
 | v0.6.0 Budgets + Goals | 2026-04-09 | 14 | 1.0 | -93% | COMPLETE |
 | v1.0.0 Genesis (Launch) | 2026-04-09 | 10 | 0.5 | -95% | COMPLETE |
 | v2.0.0 Horizon (Reports+Alerts) | 2026-04-09 | 16 | 1.0 | -94% | COMPLETE |
+| v3.0.0 Compass (Investments+NW) | 2026-04-09 | 14 | 0.75 | -95% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v3.0.0 Compass (Investments + Net Worth) gate
+Event: v3.0.0 Compass gate completed
+Deliverables:
+  - Screen 14: Investments Dashboard (/investments) with holdings table, allocation PieChart, performance AreaChart
+  - Screen 15: Net Worth Tracker (/net-worth) with assets/liabilities breakdown, trend AreaChart
+  - Investments API: holdings + performance endpoints
+  - Net Worth API: summary + trend endpoints
+  - Version bumped to 3.0.0
+  - 177 tests passing (101 backend + 76 frontend)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v4.0.0
 
 ### 2026-04-09 — v2.0.0 Horizon (Reports + Alerts) gate
 Event: v2.0.0 Horizon gate completed

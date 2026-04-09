@@ -121,6 +121,18 @@ export const api = {
         method: 'DELETE',
       }),
   },
+  investments: {
+    getHoldings: () =>
+      apiFetch<InvestmentHoldings>('/api/investments/holdings'),
+    getPerformance: () =>
+      apiFetch<InvestmentPerformance>('/api/investments/performance'),
+  },
+  netWorth: {
+    getSummary: () =>
+      apiFetch<NetWorthSummary>('/api/net-worth/summary'),
+    getTrend: (months = 6) =>
+      apiFetch<NetWorthTrend>(`/api/net-worth/trend?months=${months}`),
+  },
   reports: {
     getMonthlySummary: (months = 6) =>
       apiFetch<ReportMonthlySummary>(`/api/reports/monthly-summary?months=${months}`),
@@ -291,6 +303,57 @@ export interface GoalUpdateInput {
   current_amount?: number;
   deadline?: string;
   status?: string;
+}
+
+export interface InvestmentHolding {
+  id: string;
+  name: string;
+  official_name: string | null;
+  type: string;
+  subtype: string | null;
+  institution_name: string | null;
+  balance: number;
+  currency: string;
+}
+
+export interface AllocationItem {
+  type: string;
+  value: number;
+  percent: number;
+}
+
+export interface InvestmentHoldings {
+  holdings: InvestmentHolding[];
+  total_value: number;
+  allocation: AllocationItem[];
+}
+
+export interface InvestmentPerformance {
+  data: Array<{ date: string; value: number }>;
+  total_value: number;
+  total_gain: number;
+}
+
+export interface NetWorthAccount {
+  id: string;
+  name: string;
+  type: string;
+  subtype: string | null;
+  institution_name: string | null;
+  balance: number;
+}
+
+export interface NetWorthSummary {
+  net_worth: number;
+  total_assets: number;
+  total_liabilities: number;
+  assets: NetWorthAccount[];
+  liabilities: NetWorthAccount[];
+}
+
+export interface NetWorthTrend {
+  data: Array<{ date: string; net_worth: number }>;
+  current: number;
 }
 
 export interface ReportMonthItem {

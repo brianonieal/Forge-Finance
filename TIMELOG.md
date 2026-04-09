@@ -17,11 +17,18 @@
 | v0.6.0 | 14 | 1.0 | -93% | $150 |
 | v1.0.0 | 10 | 0.5 | -95% | $75 |
 | v2.0.0 | 16 | 1.0 | -94% | $150 |
-| **Total** | **112** | **8.5** | **-92%** | **$1,275** |
+| v3.0.0 | 14 | 0.75 | -95% | $112 |
+| **Total** | **126** | **9.25** | **-93%** | **$1,387** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 7 (v3.0.0)
+- Start: session begin
+- Duration: ~0.75 hrs
+- Gates completed: v3.0.0
+- Notes: Investments dashboard (holdings table, allocation PieChart, performance AreaChart) + Net Worth tracker (assets/liabilities breakdown, trend AreaChart). 2 backend routers, 2 frontend screens, 177 tests passing (101 backend + 76 frontend).
 
 ### 2026-04-09 — Session 6 (v2.0.0)
 - Start: session begin

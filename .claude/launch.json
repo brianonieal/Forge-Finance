@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Frontend",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "port": 3000
+    },
+    {
+      "name": "FastAPI Backend",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd apps/api && .venv/Scripts/python -m uvicorn app.main:app --reload --port 8002"],
+      "port": 8002
+    }
+  ]
+}

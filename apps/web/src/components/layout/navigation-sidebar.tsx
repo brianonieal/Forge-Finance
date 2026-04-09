@@ -36,8 +36,8 @@ const navItems: NavItem[] = [
   { label: "Goals", href: "/goals", icon: Target },
   { label: "Chat", href: "/chat", icon: MessageSquare },
   { label: "Reports", href: "/reports", icon: BarChart3 },
-  { label: "Investments", href: "/investments", icon: TrendingUp, gate: "v3.0.0" },
-  { label: "Net Worth", href: "/net-worth", icon: CreditCard, gate: "v3.0.0" },
+  { label: "Investments", href: "/investments", icon: TrendingUp },
+  { label: "Net Worth", href: "/net-worth", icon: CreditCard },
   { label: "Alerts", href: "/alerts", icon: Bell },
 ];
 

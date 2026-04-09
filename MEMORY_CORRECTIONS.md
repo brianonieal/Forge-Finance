@@ -8,13 +8,14 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 9
-Overall estimate accuracy: Estimates averaged 13.2x actual (raw human estimates vs AI-assisted)
+Gates completed: 10
+Overall estimate accuracy: Estimates averaged 13.6x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
 Most complex gate (v0.5.0): 20 hrs est → 1.5 hrs actual. Even the biggest gate follows the pattern.
 CRUD gates: v0.6.0 confirms standard CRUD + screens gates take ~1.0 hrs AI-assisted regardless of endpoint count.
+Computed-view gates: v3.0.0 confirms data-over-existing-models gates complete in 0.75 hrs.
 
 ---
 
@@ -34,6 +35,35 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v3.0.0 -- Compass (Investments + Net Worth)
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 14 hours
+  Actual:    0.75 hours
+  Variance:  -95%
+
+WHY OFF
+  Both endpoints are computed views over existing Account and Transaction models — no new tables, no new schemas. Frontend screens follow the identical Recharts + Tailwind pattern established in prior gates. The only "new" element was account-type classification (asset vs liability), which is a simple set-membership check.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Complex portfolio aggregation, historical performance calculation, net worth trend computation
+  Actual:    Holdings = filter accounts by type; allocation = group by subtype; performance = cumulative sum of transactions; net worth = assets minus liabilities. All trivial SQL aggregations.
+  Gap:       When models and data already exist, visualization gates are the fastest category. No new data, just new views.
+
+CORRECTION FOR FUTURE
+  Computed-view gates (existing data + new visualization) should estimate at 0.75 hrs AI-assisted.
+  This is now the fastest gate category, even faster than static pages (v1.0.0 = 0.5 hrs) when the patterns are fully established.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v2.0.0 -- Horizon (Reports + Alerts)
 

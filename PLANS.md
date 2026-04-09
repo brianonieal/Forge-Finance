@@ -4,13 +4,16 @@
 
 ---
 
-## CURRENT GATE: v2.0.0 — "Horizon" (Reports + Alerts) ✓
+## CURRENT GATE: v3.0.0 — "Compass" (Investments + Net Worth) ✓
 
 ### All Tasks Complete
 
 ---
 
 ## COMPLETED GATES
+
+### v3.0.0 — Compass (Investments + Net Worth) ✓
+Completed 2026-04-09. Investments dashboard, net worth tracker, 2 API routers, 177 tests.
 
 ### v2.0.0 — Horizon (Reports + Alerts) ✓
 Completed 2026-04-09. Reports, alerts, notification feed, 154 tests.
