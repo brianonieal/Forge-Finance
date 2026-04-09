@@ -93,7 +93,7 @@ export default function InvestmentsPage() {
                 <YAxis tick={{ fontSize: 10, fill: '#8B96A8' }} tickLine={false} axisLine={false} />
                 <Tooltip
                   contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
-                  formatter={(value: number) => fmt(value)}
+                  formatter={(value) => fmt(Number(value ?? 0))}
                 />
                 <Area type="monotone" dataKey="value" stroke="#00C48C" fill="url(#investGrad)" strokeWidth={2} />
               </AreaChart>
@@ -126,7 +126,7 @@ export default function InvestmentsPage() {
                   </Pie>
                   <Tooltip
                     contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
-                    formatter={(value: number) => fmt(value)}
+                    formatter={(value) => fmt(Number(value ?? 0))}
                   />
                 </PieChart>
               </ResponsiveContainer>

@@ -175,7 +175,7 @@ export default function GoalDetailPage({ params }: { params: Promise<{ id: strin
               <Tooltip
                 contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
                 labelStyle={{ color: '#8B96A8' }}
-                formatter={(value: number) => fmt(value)}
+                formatter={(value) => fmt(Number(value ?? 0))}
               />
               <Area type="monotone" dataKey="amount" stroke="#00C48C" fill="url(#goalGrad)" strokeWidth={2} />
             </AreaChart>

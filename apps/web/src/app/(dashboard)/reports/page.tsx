@@ -85,7 +85,7 @@ export default function ReportsPage() {
               <YAxis tick={{ fontSize: 11, fill: '#8B96A8' }} tickLine={false} axisLine={false} />
               <Tooltip
                 contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
-                formatter={(value: number) => fmt(value)}
+                formatter={(value) => fmt(Number(value ?? 0))}
               />
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <Bar dataKey="Income" fill="#00C48C" radius={[4, 4, 0, 0]} />
@@ -111,7 +111,7 @@ export default function ReportsPage() {
                 <YAxis type="category" dataKey="category" tick={{ fontSize: 11, fill: '#8B96A8' }} tickLine={false} width={100} />
                 <Tooltip
                   contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
-                  formatter={(value: number) => fmt(value)}
+                  formatter={(value) => fmt(Number(value ?? 0))}
                 />
                 <Bar dataKey="total" radius={[0, 4, 4, 0]}>
                   {categories.map((_, i) => (

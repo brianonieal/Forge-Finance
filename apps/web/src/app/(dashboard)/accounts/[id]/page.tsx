@@ -106,7 +106,7 @@ export default function AccountDetailPage({ params }: { params: Promise<{ id: st
               <YAxis tick={{ fontSize: 10, fill: '#8B96A8' }} tickLine={false} axisLine={false} />
               <Tooltip
                 contentStyle={{ background: '#1A2035', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
-                formatter={(value: number) => fmt(value)}
+                formatter={(value) => fmt(Number(value ?? 0))}
               />
               <Line type="monotone" dataKey="balance" stroke="#00C48C" strokeWidth={2} dot={false} />
             </LineChart>
