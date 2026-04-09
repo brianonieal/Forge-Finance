@@ -47,6 +47,8 @@ export function NavigationSidebar() {
 
   return (
     <aside
+      role="navigation"
+      aria-label="Main navigation"
       className={cn(
         "hidden md:flex flex-col bg-bg-surface border-r border-border transition-all duration-200 h-screen",
         sidebarExpanded ? "w-60" : "w-[60px]"

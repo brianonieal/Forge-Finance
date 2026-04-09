@@ -4,13 +4,16 @@
 
 ---
 
-## CURRENT GATE: v3.0.0 — "Compass" (Investments + Net Worth) ✓
+## CURRENT GATE: v4.0.0 — "Forge" (Performance + Accessibility + Beta) ✓
 
 ### All Tasks Complete
 
 ---
 
 ## COMPLETED GATES
+
+### v4.0.0 — Forge (Performance + Accessibility + Beta) ✓
+Completed 2026-04-09. 2FA TOTP flow, skip-nav, focus-visible, beta access gate, 218 tests.
 
 ### v3.0.0 — Compass (Investments + Net Worth) ✓
 Completed 2026-04-09. Investments dashboard, net worth tracker, 2 API routers, 177 tests.

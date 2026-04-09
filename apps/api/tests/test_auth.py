@@ -9,7 +9,7 @@ async def test_health_no_auth_required(client: AsyncClient):
     """Health endpoint should not require auth."""
     response = await client.get("/health")
     assert response.status_code == 200
-    assert response.json()["version"] == "3.0.0"
+    assert response.json()["version"] == "4.0.0"
 
 
 @pytest.mark.asyncio

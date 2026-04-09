@@ -149,6 +149,24 @@ export const api = {
     markAllRead: () =>
       apiFetch<{ status: string }>('/api/alerts/mark-all-read', { method: 'POST' }),
   },
+  settings: {
+    get2FAStatus: () =>
+      apiFetch<{ enabled: boolean }>('/api/settings/2fa/status'),
+    setup2FA: () =>
+      apiFetch<{ secret: string; otpauth_uri: string }>('/api/settings/2fa/setup', { method: 'POST' }),
+    verify2FA: (code: string) =>
+      apiFetch<{ status: string }>('/api/settings/2fa/verify', {
+        method: 'POST',
+        body: JSON.stringify({ code }),
+      }),
+    disable2FA: () =>
+      apiFetch<{ status: string }>('/api/settings/2fa', { method: 'DELETE' }),
+    verifyBetaAccess: (code: string) =>
+      apiFetch<{ valid: boolean; message: string }>('/api/settings/beta-access', {
+        method: 'POST',
+        body: JSON.stringify({ code }),
+      }),
+  },
   oracle: {
     query: (query: string, conversationId?: string) =>
       fetch(`${API_BASE}/api/oracle/query`, {

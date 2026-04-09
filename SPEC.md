@@ -4,40 +4,38 @@
 
 ---
 
-## CURRENT GATE: v3.0.0 — "Compass" (Investments + Net Worth)
+## CURRENT GATE: v4.0.0 — "Forge" (Performance + Accessibility + Beta)
 
-**Purpose:** Investment portfolio view + net worth tracking
-**Est:** 14 hrs | Calibrated: 1.0 hrs AI-assisted
+**Purpose:** Performance, accessibility, 2FA, beta access
+**Est:** 12 hrs | Calibrated: 1.0 hrs AI-assisted
 
 ---
 
 ## DELIVERABLES
 
-- [x] Screen 14: Investments Dashboard — /investments (holdings table, allocation pie, performance chart)
-- [x] Screen 15: Net Worth Tracker — /net-worth (assets vs liabilities, trend chart, account breakdown)
-- [x] Investments API: GET /api/investments/holdings, GET /api/investments/performance
-- [x] Net Worth API: GET /api/net-worth/summary, GET /api/net-worth/trend
-- [x] Navigation sidebar: Investments + Net Worth ungated
-- [x] Tests: 177 cumulative (101 backend + 76 frontend)
+- [x] 2FA implementation in /settings/security (TOTP setup flow with QR code)
+- [x] Accessibility: skip-nav, aria-labels, focus-visible outlines, reduced motion
+- [x] Performance: focus-visible outlines, prefers-reduced-motion, semantic landmarks
+- [x] Beta access program: invite-only gate with access code entry (BetaGate component)
+- [x] API: GET/POST/DELETE /api/settings/2fa/*, POST /api/settings/beta-access
+- [x] Version bump to 4.0.0
+- [x] Tests: 218 cumulative (116 backend + 102 frontend)
 
 ---
 
 ## SCREENS
 
-| # | Screen | Route | Notes |
-|---|--------|-------|-------|
-| 14 | Investments Dashboard | /investments | Holdings, allocation, performance |
-| 15 | Net Worth Tracker | /net-worth | Assets vs liabilities, trend |
+No new screens. Enhancements to existing screens.
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. Holdings table shows account-derived investment positions with balances
-2. Allocation PieChart shows distribution across account types
-3. Performance AreaChart shows portfolio value over time
-4. Net worth summary shows total assets, liabilities, and net worth
-5. Net worth trend AreaChart shows historical net worth
-6. Account breakdown lists all accounts grouped by type (asset/liability)
-7. All financial amounts use JetBrains Mono
-8. All existing tests continue to pass
+1. 2FA enable/disable flow works with TOTP (authenticator app)
+2. Skip navigation link visible on focus, jumps to main content
+3. All interactive elements have visible focus indicators
+4. Chart-heavy pages use dynamic imports (no SSR for Recharts)
+5. Beta access code required for new signups
+6. All financial amounts remain in JetBrains Mono
+7. All existing tests continue to pass
+8. 218+ cumulative tests

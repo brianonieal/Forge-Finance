@@ -1,6 +1,17 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, waitFor, cleanup, fireEvent } from '@testing-library/react';
 
+vi.mock('@/stores/auth-store', () => ({
+  useAuthStore: () => ({
+    signInWithGoogle: vi.fn(),
+    signInWithMagicLink: vi.fn().mockResolvedValue({ error: null }),
+  }),
+}));
+
+vi.mock('@/components/ui/toast', () => ({
+  toast: vi.fn(),
+}));
+
 import LandingPage from './page';
 
 describe('Landing Page', () => {
@@ -13,7 +24,6 @@ describe('Landing Page', () => {
 
   it('renders hero CTAs', () => {
     render(<LandingPage />);
-    expect(screen.getByText('Join the Waitlist')).toBeInTheDocument();
     expect(screen.getByText('See How It Works')).toBeInTheDocument();
   });
 
@@ -28,7 +38,7 @@ describe('Landing Page', () => {
     render(<LandingPage />);
     expect(screen.getByText('Free')).toBeInTheDocument();
     expect(screen.getByText('Pro')).toBeInTheDocument();
-    expect(screen.getByText('Join Free')).toBeInTheDocument();
+    expect(screen.getAllByText('Join Free').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('Join Waitlist for Pro')).toBeInTheDocument();
   });
 
@@ -49,6 +59,22 @@ describe('Landing Page', () => {
   it('renders privacy note', () => {
     render(<LandingPage />);
     expect(screen.getByText("We'll never share your email.")).toBeInTheDocument();
+  });
+
+  it('renders login button in nav', () => {
+    render(<LandingPage />);
+    expect(screen.getByText('Login')).toBeInTheDocument();
+  });
+
+  it('opens auth modal when Login is clicked', async () => {
+    render(<LandingPage />);
+    fireEvent.click(screen.getByText('Login'));
+    await waitFor(() => {
+      expect(screen.getByText('Sign in or create your account')).toBeInTheDocument();
+    });
+    expect(screen.getByText('Continue with Google')).toBeInTheDocument();
+    expect(screen.getByText('Send Magic Link')).toBeInTheDocument();
+    expect(screen.getByText(/Test account:/)).toBeInTheDocument();
   });
 
   it('renders footer', () => {

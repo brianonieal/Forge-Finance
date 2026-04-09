@@ -18,7 +18,7 @@ from app.routers.transactions import router as transactions_router
 
 app = FastAPI(
     title="Forge Finance API",
-    version="3.0.0",
+    version="4.0.0",
     docs_url="/docs" if settings.debug else None,
     redoc_url=None,
 )
@@ -59,6 +59,6 @@ async def health_check():
 
     return {
         "status": "healthy",
-        "version": "3.0.0",
+        "version": "4.0.0",
         "database": db_status,
     }

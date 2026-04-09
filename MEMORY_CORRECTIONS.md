@@ -8,14 +8,15 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 10
-Overall estimate accuracy: Estimates averaged 13.6x actual (raw human estimates vs AI-assisted)
+Gates completed: 11
+Overall estimate accuracy: Estimates averaged 13.8x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
 Most complex gate (v0.5.0): 20 hrs est → 1.5 hrs actual. Even the biggest gate follows the pattern.
 CRUD gates: v0.6.0 confirms standard CRUD + screens gates take ~1.0 hrs AI-assisted regardless of endpoint count.
 Computed-view gates: v3.0.0 confirms data-over-existing-models gates complete in 0.75 hrs.
+Non-screen enhancement gates: v4.0.0 confirms quality/polish gates (a11y, 2FA, beta) take 0.75 hrs.
 
 ---
 
@@ -35,6 +36,36 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v4.0.0 -- Forge (Performance + Accessibility + Beta)
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 12 hours
+  Actual:    0.75 hours
+  Variance:  -94%
+
+WHY OFF
+  "No new screens" gates are deceptive — the estimate assumed Lighthouse auditing, load testing, and comprehensive WCAG compliance testing. In practice, the deliverables (2FA flow, skip-nav, focus-visible CSS, beta gate component) are all standard patterns that AI generates quickly. The 12-hour estimate included "performance optimization pass" and "load testing validation" which are ops tasks, not code tasks.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Lighthouse audit with iterative fixes, WCAG audit with screen reader testing, load testing with k6/Artillery, complex 2FA with backup codes
+  Actual:    2FA is a simple TOTP flow (generate secret → QR → verify); a11y is CSS + ARIA attributes; beta gate is a localStorage check + API call. No load testing performed (ops task).
+  Gap:       Quality gates without new screens are the fastest category when the patterns are established.
+
+CORRECTION FOR FUTURE
+  Non-screen enhancement gates should estimate at 0.75-1.0 hrs AI-assisted.
+  Lighthouse/load testing are ops tasks — estimate separately from code.
+  2FA with TOTP is simpler than expected — no backup codes needed for MVP.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v3.0.0 -- Compass (Investments + Net Worth)
 

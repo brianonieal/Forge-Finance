@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/stores/auth-store";
 import { SkeletonScreen } from "@/components/ui/skeleton";
+import { BetaGate } from "@/components/layout/beta-gate";
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading, initialized } = useAuthStore();
@@ -23,5 +24,5 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
     return null;
   }
 
-  return <>{children}</>;
+  return <BetaGate>{children}</BetaGate>;
 }

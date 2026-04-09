@@ -19,10 +19,26 @@
 | v1.0.0 Genesis (Launch) | 2026-04-09 | 10 | 0.5 | -95% | COMPLETE |
 | v2.0.0 Horizon (Reports+Alerts) | 2026-04-09 | 16 | 1.0 | -94% | COMPLETE |
 | v3.0.0 Compass (Investments+NW) | 2026-04-09 | 14 | 0.75 | -95% | COMPLETE |
+| v4.0.0 Forge (Perf+A11y+Beta) | 2026-04-09 | 12 | 0.75 | -94% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v4.0.0 Forge (Performance + Accessibility + Beta) gate
+Event: v4.0.0 Forge gate completed
+Deliverables:
+  - 2FA TOTP setup/verify/disable flow with QR code in /settings/security
+  - Skip navigation link, focus-visible outlines, prefers-reduced-motion
+  - Sidebar aria-label="Main navigation", main role="main"
+  - BetaGate component: access code verification with localStorage persistence
+  - Auth modal on landing page (Login button + Join Free triggers)
+  - Backend 2FA endpoints: status, setup, verify, disable
+  - Backend beta-access endpoint with valid codes
+  - Version bumped to 4.0.0
+  - 218 tests passing (116 backend + 102 frontend)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v5.0.0 Apex
 
 ### 2026-04-09 — v3.0.0 Compass (Investments + Net Worth) gate
 Event: v3.0.0 Compass gate completed

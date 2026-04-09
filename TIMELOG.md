@@ -18,11 +18,18 @@
 | v1.0.0 | 10 | 0.5 | -95% | $75 |
 | v2.0.0 | 16 | 1.0 | -94% | $150 |
 | v3.0.0 | 14 | 0.75 | -95% | $112 |
-| **Total** | **126** | **9.25** | **-93%** | **$1,387** |
+| v4.0.0 | 12 | 0.75 | -94% | $112 |
+| **Total** | **138** | **10.0** | **-93%** | **$1,500** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 8 (v4.0.0)
+- Start: session begin
+- Duration: ~0.75 hrs
+- Gates completed: v4.0.0
+- Notes: 2FA TOTP setup/verify/disable flow with QR code, skip-nav link, focus-visible outlines, prefers-reduced-motion, aria labels on navigation, BetaGate component with access code verification. 218 tests passing (116 backend + 102 frontend).
 
 ### 2026-04-09 — Session 7 (v3.0.0)
 - Start: session begin

@@ -4,6 +4,35 @@
 
 ---
 
+## [4.0.0] "Forge" — 2026-04-09
+
+### Added
+- 2FA TOTP implementation in /settings/security
+  - Setup flow: generate secret → QR code display → manual key copy → verify code
+  - Enable/disable toggle with confirmation
+  - Backend: GET /api/settings/2fa/status, POST /2fa/setup, POST /2fa/verify, DELETE /2fa
+  - In-memory state for MVP (production would persist to DB)
+- Accessibility improvements (WCAG 2.1 AA):
+  - Skip navigation link ("Skip to main content") — visible on focus
+  - Focus-visible outlines (2px brand-primary) on all interactive elements
+  - `role="navigation"` + `aria-label="Main navigation"` on sidebar
+  - `role="main"` + `id="main-content"` on main content area
+  - `prefers-reduced-motion` media query to disable animations
+- Beta access gate (BetaGate component):
+  - Access code entry form shown before authenticated app content
+  - Backend: POST /api/settings/beta-access with valid codes (FORGE2026, BETAFORGE, EARLYACCESS)
+  - localStorage persistence — verified once, remembered across sessions
+  - Integrated into ProtectedRoute wrapper
+- Auth modal on landing page:
+  - Login button in top-right nav bar
+  - Modal overlay with Google OAuth + magic link (not a page redirect)
+  - "Join Free" buttons in hero and pricing section trigger same modal
+  - Test account credentials displayed in small gray text
+- Version bumped to 4.0.0
+- 218 tests passing (116 backend + 102 frontend)
+
+---
+
 ## [3.0.0] "Compass" — 2026-04-09
 
 ### Added
