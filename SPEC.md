@@ -4,29 +4,27 @@
 
 ---
 
-## CURRENT GATE: v0.0.0 — Foundation
+## CURRENT GATE: v0.1.0 — Scaffold
 
-**Purpose:** Repo, environment, CI/CD, design tokens, project structure
-**Est:** 6 hrs
+**Purpose:** Project structure, design tokens, component foundations
+**Est:** 8 hrs
 
 ---
 
 ## DELIVERABLES
 
-- [x] Git repository initialized
-- [x] Monorepo scaffold (Turborepo + pnpm workspaces)
-- [x] Next.js 14+ frontend app (apps/web)
-- [x] FastAPI backend app (apps/api)
-- [x] Design tokens as CSS custom properties in globals.css
-- [x] Inter + JetBrains Mono fonts configured
-- [x] Tailwind CSS configured with design tokens
-- [x] All 22 Blueprint v10 foundation files populated
-- [x] CLAUDE.md boot sequence
-- [x] GitHub Actions CI/CD pipeline
-- [x] Environment variable templates
-- [x] Dev server starts (frontend — Next.js build passes)
-- [x] Dev server starts (backend — /health returns 200)
-- [x] agnix: PASS (all 22 foundation files present and valid)
+- [x] Next.js App Router structure (route groups, layouts)
+- [x] Tailwind CSS configured with all design tokens
+- [x] Global layout: NavigationSidebar (desktop) + MobileBottomTabBar
+- [x] All CSS custom properties from DESIGN_SYSTEM.md
+- [x] JetBrains Mono configured for financial numbers
+- [x] Inter configured for UI text
+- [x] SkeletonScreen loading components
+- [x] Toast notification system
+- [x] ErrorState components
+- [x] PeriodSelector global component
+- [x] MetricCard component
+- [x] Vitest + React Testing Library setup
 
 ---
 
@@ -38,15 +36,18 @@ None (infrastructure only)
 
 ## TESTS
 
-0 (no tests at this gate)
+0 (Vitest configured, no test files yet)
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. `pnpm dev` starts frontend on :3000
-2. `uvicorn app.main:app` starts backend, /health returns 200
-3. All 22 foundation files exist and are populated
-4. Design tokens render correctly (Inter for UI, JetBrains Mono for money)
-5. GitHub Actions CI passes on push
-6. No secrets in code — .env templates only
+1. [x] NavigationSidebar renders with all nav items (version-gated items grayed)
+2. [x] MobileBottomTabBar renders at <768px, sidebar hides
+3. [x] Toast system shows all 4 types (success, error, warning, info)
+4. [x] SkeletonScreen renders metric-card, table-row, full-page, chart variants
+5. [x] ErrorState renders full-page and inline variants
+6. [x] PeriodSelector renders all 7 periods, highlights active
+7. [x] MetricCard renders with JetBrains Mono, gain/loss deltas
+8. [x] All components match FRONTEND_SPEC.md exactly
+9. [x] Vitest runs (even if 0 tests)

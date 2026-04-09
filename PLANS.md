@@ -4,25 +4,27 @@
 
 ---
 
-## CURRENT GATE: v0.0.0 — Foundation
+## CURRENT GATE: v0.1.0 — Scaffold
 
 ### Active Tasks
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1 | Monorepo scaffold | DONE | Turborepo + pnpm |
-| 2 | Next.js frontend setup | DONE | apps/web |
-| 3 | FastAPI backend setup | DONE | apps/api |
-| 4 | Design tokens + Tailwind | DONE | globals.css |
-| 5 | Foundation files (22) | IN PROGRESS | Creating all |
-| 6 | CLAUDE.md boot sequence | PENDING | |
-| 7 | GitHub Actions CI/CD | PENDING | |
-| 8 | .env templates | PENDING | |
-| 9 | Verify dev servers | PENDING | |
-| 10 | Gate close checklist | PENDING | |
+| 1 | Install shadcn/ui + Lucide + Framer Motion | PENDING | |
+| 2 | App Router route structure + layouts | PENDING | |
+| 3 | NavigationSidebar component | PENDING | |
+| 4 | MobileBottomTabBar component | PENDING | |
+| 5 | Toast notification system | PENDING | |
+| 6 | SkeletonScreen component | PENDING | |
+| 7 | ErrorState component | PENDING | |
+| 8 | PeriodSelector component | PENDING | |
+| 9 | MetricCard component | PENDING | |
+| 10 | Vitest + RTL setup | PENDING | |
+| 11 | Gate close checklist | PENDING | |
 
 ---
 
-## NEXT GATE: v0.1.0 — Scaffold
+## COMPLETED GATES
 
-Not started. Opens after v0.0.0 gate close.
+### v0.0.0 — Foundation ✓
+Completed 2026-04-09. All 22 foundation files, monorepo scaffold, design tokens.

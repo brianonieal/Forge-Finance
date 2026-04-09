@@ -12,7 +12,9 @@
       "Bash(curl -s http://127.0.0.1:8000/health)",
       "Bash(.venv/Scripts/uvicorn app.main:app --host 127.0.0.1 --port 8001)",
       "Bash(curl -s http://127.0.0.1:8001/health)",
-      "Bash(kill %1)"
+      "Bash(kill %1)",
+      "Bash(pnpm add:*)",
+      "Bash(npx vitest:*)"
     ]
   }
 }

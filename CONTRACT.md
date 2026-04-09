@@ -22,7 +22,7 @@ gate:            Foundation
 frontend_host:   Vercel
 frontend_url:    [TBD — set at first deploy]
 backend_host:    Render (free tier)
-backend_url:     [TBD — set at first deploy]
+backend_url:     http://localhost:8000
 database_host:   Supabase
 database_name:   forge-finance
 ```
@@ -33,7 +33,7 @@ database_name:   forge-finance
 
 ```
 frontend:        3000
-backend:         8000
+backend:         8001
 database:        5432 (Supabase remote)
 ```
 

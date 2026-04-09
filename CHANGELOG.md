@@ -4,6 +4,26 @@
 
 ---
 
+## [0.1.0] — 2026-04-09
+
+### Added
+- App Router route structure with (dashboard) route group
+- NavigationSidebar: 240px expanded, 60px collapsed, version-gated items
+- MobileBottomTabBar: 5 tabs, fixed bottom, hidden on desktop
+- Toast notification system: 4 types, auto-dismiss, stacked, progress bar
+- SkeletonScreen: metric-card, table-row, full-page, chart variants
+- ErrorState: full-page and inline variants with retry
+- NetworkOfflineBanner component
+- PeriodSelector: 7 periods (1D-ALL), pill tabs with Zustand state
+- MetricCard: JetBrains Mono values, gain/loss/neutral deltas
+- Zustand UI store (sidebar state, period selection)
+- Vitest + React Testing Library + jsdom setup
+- Lucide React, Framer Motion, Zustand, TanStack Query, clsx, tailwind-merge
+- Placeholder pages for all routes (dashboard, accounts, transactions, budgets, goals, chat, settings)
+- Root page redirects to /dashboard
+
+---
+
 ## [0.0.0] — 2026-04-09
 
 ### Added

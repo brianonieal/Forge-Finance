@@ -105,3 +105,7 @@ Junction table (family_member_permissions) with proper FKs — but adds complexi
 **Result:**
 
 ---
+## DEC-021 -- Backend port 8001 (not default 8000)
+Decision: Use port 8001 for FastAPI local dev
+Reason: Port 8000 blocked on Windows 11 development machine
+Status: LOCKED

@@ -15,6 +15,17 @@
 
 ## SESSION LOG (most recent first)
 
+### 2026-04-09 — v0.1.0 Scaffold gate
+Event: v0.1.0 Scaffold gate completed
+Deliverables:
+  - App Router route structure with (dashboard) route group
+  - 8 components: NavigationSidebar, MobileBottomTabBar, Toast, SkeletonScreen, ErrorState, NetworkOfflineBanner, PeriodSelector, MetricCard
+  - Zustand UI store
+  - Vitest + RTL configured
+  - All placeholder pages for routes
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.2.0 Data Layer
+
 ### 2026-04-09 — v0.0.0 Foundation gate
 Event: v0.0.0 Foundation gate completed
 Deliverables:
