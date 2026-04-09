@@ -4,26 +4,30 @@
 
 ---
 
-## CURRENT GATE: v0.4.0 — Plaid + @SYNC
+## CURRENT GATE: v0.5.0 — Dashboard + @ORACLE
 
 ### Active Tasks
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 1 | Backend: Plaid service module | PENDING | create_link_token, exchange, sync |
-| 2 | Backend: Plaid router (4 endpoints) | PENDING | |
-| 3 | Backend: @SYNC agent (cursor sync, dedup, webhooks) | PENDING | |
-| 4 | Backend: Webhook signature verification | PENDING | |
-| 5 | Backend: Voyage AI embedding pipeline | PENDING | |
-| 6 | Backend: Daily cron fallback | PENDING | |
-| 7 | Frontend: Plaid Link integration | PENDING | react-plaid-link |
-| 8 | Frontend: Screen 3 — Onboarding Wizard | PENDING | 4 steps |
-| 9 | Frontend: Screen 5 — Accounts page | PENDING | |
-| 10 | Tests: Plaid + sync + frontend | PENDING | Target: 50 cumulative |
+| 1 | Backend: Dashboard API (3 endpoints) | PENDING | metrics, spending-trend, category-breakdown |
+| 2 | Backend: Transaction API (3 endpoints) | PENDING | list, detail, recategorize |
+| 3 | Backend: @ORACLE agent (classifier + reasoning) | PENDING | Haiku → Sonnet pipeline |
+| 4 | Backend: SSE streaming endpoint | PENDING | /api/oracle/query |
+| 5 | Backend: Cost tracking + ceiling enforcement | PENDING | agent_log, $0.50/user/mo |
+| 6 | Frontend: Screen 4 — Dashboard | PENDING | Metrics, charts, recent txns |
+| 7 | Frontend: Screen 6 — Account Detail | PENDING | /accounts/:id |
+| 8 | Frontend: Screen 7 — Transactions | PENDING | Table, filters, drawer |
+| 9 | Frontend: Screen 12 — @ORACLE Chat | PENDING | SSE, history, sidebar |
+| 10 | Frontend: Install Recharts | PENDING | Charts library |
+| 11 | Tests: Backend + Frontend | PENDING | Target: 89 cumulative |
 
 ---
 
 ## COMPLETED GATES
+
+### v0.4.0 — Plaid + @SYNC ✓
+Completed 2026-04-09. Plaid Link, @SYNC agent, Voyage AI embeddings, 52 tests.
 
 ### v0.3.0 — Auth ✓
 Completed 2026-04-09. Supabase Auth, Settings pages, 36 tests.

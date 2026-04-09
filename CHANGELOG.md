@@ -4,6 +4,32 @@
 
 ---
 
+## [0.5.0] — 2026-04-09
+
+### Added
+- Screen 4 — Dashboard: net worth, daily P&L, budget health, top spend metric cards
+  - Spending trend AreaChart (Recharts) with period selector integration
+  - Category breakdown PieChart with legend and JetBrains Mono amounts
+  - Recent transactions list (5 items) with View All link
+- Screen 6 — Account Detail: /accounts/:id with balance history LineChart, filtered transactions
+- Screen 7 — Transactions: full table with sort (date/amount), category filter chips, search, pagination
+  - Transaction detail drawer (slides from right) with amount, date, category, status
+  - Export button (placeholder, disabled for free tier)
+- Screen 12 — @ORACLE Chat: SSE streaming responses, conversation history, typing indicator
+  - Suggested questions on empty state
+  - Query limit banner (8+ of 10 used) + ceiling message (limit reached)
+  - Financial numbers auto-detected and rendered in JetBrains Mono
+- @ORACLE agent pipeline: classification + reasoning with transaction context search
+- Dashboard API: GET /api/dashboard/metrics, /spending-trend, /category-breakdown
+- Transaction API: GET/PATCH /api/transactions, GET /api/transactions/:id
+- Oracle API: POST /api/oracle/query (SSE), GET /api/oracle/history, GET /api/oracle/usage
+- Cost tracking: agent_log entries with token counts and cost estimation
+- Free tier enforcement: 10 queries/month limit + $0.50/user/month ceiling
+- Recharts library integration (AreaChart, PieChart, LineChart)
+- 84 tests passing (67 backend + 17 frontend)
+
+---
+
 ## [0.4.0] — 2026-04-09
 
 ### Added

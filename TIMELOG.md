@@ -13,11 +13,18 @@
 | v0.2.0 | 10 | 0.75 | -93% | $112 |
 | v0.3.0 | 10 | 1.0 | -90% | $150 |
 | v0.4.0 | 18 | 1.0 | -94% | $150 |
-| **Total** | **52** | **4.5** | **-91%** | **$675** |
+| v0.5.0 | 20 | 1.5 | -93% | $225 |
+| **Total** | **72** | **6.0** | **-92%** | **$900** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 3 (v0.5.0)
+- Start: session begin
+- Duration: ~1.5 hrs
+- Gates completed: v0.5.0
+- Notes: Most complex gate — 4 screens + @ORACLE AI agent + SSE streaming + Recharts charts. 84 tests passing. All dashboard metrics, transaction CRUD, and chat with streaming responses.
 
 ### 2026-04-09 — Session 2 (v0.4.0)
 - Start: session begin

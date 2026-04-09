@@ -8,11 +8,12 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 5
-Overall estimate accuracy: Estimates averaged 11.6x actual (raw human estimates vs AI-assisted)
+Gates completed: 6
+Overall estimate accuracy: Estimates averaged 12x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
+Most complex gate (v0.5.0): 20 hrs est → 1.5 hrs actual. Even the biggest gate follows the pattern.
 
 ---
 
@@ -32,6 +33,36 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v0.5.0 -- Dashboard + @ORACLE
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 20 hours (most complex gate)
+  Actual:    1.5 hours
+  Variance:  -93%
+
+WHY OFF
+  Despite being the most complex gate (4 screens, AI agent, SSE streaming, Recharts charts, cost tracking), the pattern holds: AI generation with pre-decided specs produces code at ~10x the estimated human pace. The @ORACLE agent was the only novel component, but even LLM pipeline code generation is routine for AI assistance.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Complex AI agent pipeline, SSE streaming challenges, chart library integration friction
+  Actual:    SSE streaming was standard FastAPI StreamingResponse; Recharts rendered first-try; @ORACLE pipeline was straightforward classification + response generation
+  Gap:       No new friction patterns emerged. Complexity doesn't scale linearly with AI-assisted development.
+
+CORRECTION FOR FUTURE
+  Even "most complex" gates should estimate at 1.5-2.0 hrs AI-assisted.
+  Complexity multipliers don't apply to AI-generated code the same way they apply to human developers.
+  The 20 hr estimate for "most complex gate" should be 2.0 hrs.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v0.4.0 -- Plaid + @SYNC
 

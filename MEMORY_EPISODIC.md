@@ -14,10 +14,28 @@
 | v0.2.0 Data Layer | 2026-04-09 | 10 | 0.75 | -93% | COMPLETE |
 | v0.3.0 Auth | 2026-04-09 | 10 | 1.0 | -90% | COMPLETE |
 | v0.4.0 Plaid + @SYNC | 2026-04-09 | 18 | 1.0 | -94% | COMPLETE |
+| v0.5.0 Dashboard + @ORACLE | 2026-04-09 | 20 | 1.5 | -93% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v0.5.0 Dashboard + @ORACLE gate
+Event: v0.5.0 Dashboard + @ORACLE gate completed
+Deliverables:
+  - Screen 4: Dashboard with metrics, spending trend chart, category pie chart, recent transactions
+  - Screen 6: Account Detail (/accounts/:id) with balance history chart
+  - Screen 7: Transactions with full table, sort, filter, search, detail drawer
+  - Screen 12: @ORACLE Chat with SSE streaming, suggested questions, query limit UI
+  - @ORACLE agent: classification + reasoning pipeline with cost tracking
+  - Dashboard API: 3 endpoints (metrics, spending-trend, category-breakdown)
+  - Transaction API: 3 endpoints (list, detail, recategorize)
+  - Oracle API: 3 endpoints (query with SSE, history, usage)
+  - Recharts integration (AreaChart, PieChart, LineChart)
+  - Free tier limit enforcement (10 queries/month) + $0.50/user/month ceiling
+  - 84 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.6.0 Budgets + Goals
 
 ### 2026-04-09 — v0.4.0 Plaid + @SYNC gate
 Event: v0.4.0 Plaid + @SYNC gate completed
