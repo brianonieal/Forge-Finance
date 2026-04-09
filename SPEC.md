@@ -4,50 +4,61 @@
 
 ---
 
-## CURRENT GATE: v0.1.0 — Scaffold
+## CURRENT GATE: v0.2.0 — Data Layer
 
-**Purpose:** Project structure, design tokens, component foundations
-**Est:** 8 hrs
+**Purpose:** All 9 database tables + migrations + base API structure
+**Est:** 10 hrs (raw) + 30% schema buffer = 13 hrs calibrated
 
 ---
 
 ## DELIVERABLES
 
-- [x] Next.js App Router structure (route groups, layouts)
-- [x] Tailwind CSS configured with all design tokens
-- [x] Global layout: NavigationSidebar (desktop) + MobileBottomTabBar
-- [x] All CSS custom properties from DESIGN_SYSTEM.md
-- [x] JetBrains Mono configured for financial numbers
-- [x] Inter configured for UI text
-- [x] SkeletonScreen loading components
-- [x] Toast notification system
-- [x] ErrorState components
-- [x] PeriodSelector global component
-- [x] MetricCard component
-- [x] Vitest + React Testing Library setup
+- [x] SQLAlchemy models for all 9 tables
+- [x] Alembic migration: all 9 tables in single migration (001)
+- [x] RLS policies on all user-specific tables
+- [x] FastAPI base structure with SQLAlchemy async sessions
+- [x] Health check endpoint with DB connectivity check
+- [x] Pydantic v2 request/response schemas
+- [x] 29 tests passing (models, schemas, health endpoint)
+
+---
+
+## SCHEMA (from MEMORY_SEMANTIC.md)
+
+```
+users           -- id, email, stripe_customer_id, plan, created_at
+accounts        -- id, user_id, plaid_account_id, name, type, balance
+transactions    -- id, account_id, user_id, plaid_id, amount, date,
+                   merchant, category, embedding vector(1024)
+budgets         -- id, user_id, category, limit, period
+goals           -- id, user_id, name, target_amount, current_amount, deadline
+categories      -- id, user_id, name, color, is_default
+sync_log        -- id, user_id, type, status, cursor, completed_at
+agent_log       -- id, user_id, agent, model, tokens, cost, duration, created_at
+conversations   -- id, user_id, messages jsonb, created_at, updated_at
+```
 
 ---
 
 ## SCREENS
 
-None (infrastructure only)
+None
 
 ---
 
 ## TESTS
 
-0 (Vitest configured, no test files yet)
+12 target:
+- 9 table creation tests (one per model)
+- 2 two-user isolation tests (RLS)
+- 1 health check endpoint test
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. [x] NavigationSidebar renders with all nav items (version-gated items grayed)
-2. [x] MobileBottomTabBar renders at <768px, sidebar hides
-3. [x] Toast system shows all 4 types (success, error, warning, info)
-4. [x] SkeletonScreen renders metric-card, table-row, full-page, chart variants
-5. [x] ErrorState renders full-page and inline variants
-6. [x] PeriodSelector renders all 7 periods, highlights active
-7. [x] MetricCard renders with JetBrains Mono, gain/loss deltas
-8. [x] All components match FRONTEND_SPEC.md exactly
-9. [x] Vitest runs (even if 0 tests)
+1. All 9 tables exist in Supabase with correct columns and types
+2. RLS enabled on all user-specific tables
+3. Two-user isolation test passes (user A cannot see user B's data)
+4. /health returns DB connectivity status
+5. 12 tests passing

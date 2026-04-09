@@ -15,6 +15,17 @@
 
 ## SESSION LOG (most recent first)
 
+### 2026-04-09 — v0.2.0 Data Layer gate
+Event: v0.2.0 Data Layer gate completed
+Deliverables:
+  - 9 SQLAlchemy models with UUID PKs, timestamps, relationships
+  - Alembic migration 001 (all tables + pgvector + RLS)
+  - Pydantic v2 schemas for all CRUD operations
+  - Health endpoint with DB connectivity check
+  - 29 tests passing (target was 12)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.3.0 Auth
+
 ### 2026-04-09 — v0.1.0 Scaffold gate
 Event: v0.1.0 Scaffold gate completed
 Deliverables:

@@ -4,6 +4,19 @@
 
 ---
 
+## [0.2.0] — 2026-04-09
+
+### Added
+- SQLAlchemy models for all 9 database tables (users, accounts, transactions, categories, budgets, goals, sync_log, agent_log, conversations)
+- Alembic migration 001: creates all 9 tables with indexes, foreign keys, and pgvector extension
+- RLS policies on all tables (users match on id, others on user_id via auth.uid())
+- Pydantic v2 schemas: UserRead/Update, AccountRead, TransactionRead/Update, BudgetCreate/Read/Update, GoalCreate/Read/Update
+- Health check endpoint with database connectivity status
+- Transaction embedding column: vector(1024) for Voyage AI semantic search
+- 29 passing tests (model structure, schema validation, health endpoint)
+
+---
+
 ## [0.1.0] — 2026-04-09
 
 ### Added
