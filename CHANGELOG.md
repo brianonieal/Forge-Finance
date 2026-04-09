@@ -4,6 +4,35 @@
 
 ---
 
+## [0.6.0] — 2026-04-09
+
+### Added
+- Screen 8 — Budgets: /budgets with RadialBarChart health ring, category progress bars, create budget modal
+  - Alert threshold colors (0-70% green, 70-90% amber, 90-100% red)
+  - Status chips: On Track, Warning, Over Budget
+  - Empty state with create CTA
+- Screen 9 — Budget Detail: /budgets/:id with spending trend AreaChart, filtered transactions
+  - Budget limit, spent, remaining amounts in JetBrains Mono
+  - Progress bar with threshold coloring
+- Screen 10 — Goals: /goals with 2-col grid, CircularProgressRing (120px), pace indicators
+  - Create goal modal (bottom sheet mobile, modal desktop)
+  - Completed goals section (collapsible) with Celebrate Again
+  - CelebrationModal with confetti animation (respects prefers-reduced-motion)
+  - Three-dot menu: Pause, Delete
+- Screen 11 — Goal Detail: /goals/:id with 180px progress ring, contribution history AreaChart
+  - Pace indicator with projected completion date
+  - Goal actions: Edit, Pause/Resume, Delete
+- Budget CRUD API: GET/POST /api/budgets, GET/PATCH/DELETE /api/budgets/:id
+  - Overall health calculation (% of budgets on track)
+  - Per-category spending aggregation from transactions
+- Goal CRUD API: GET/POST /api/goals, GET/PATCH/DELETE /api/goals/:id
+  - Pace calculation with projected completion date
+  - Milestone detection (25%, 50%, 75%, 100%) on amount updates
+  - Auto-complete when current_amount reaches target_amount
+- 124 tests passing (82 backend + 42 frontend)
+
+---
+
 ## [0.5.0] — 2026-04-09
 
 ### Added

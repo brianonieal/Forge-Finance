@@ -81,6 +81,46 @@ export const api = {
         body: JSON.stringify(data),
       }),
   },
+  budgets: {
+    list: (period = 'monthly') =>
+      apiFetch<BudgetListResponse>(`/api/budgets?period=${period}`),
+    get: (id: string) =>
+      apiFetch<BudgetDetail>(`/api/budgets/${id}`),
+    create: (data: BudgetCreateInput) =>
+      apiFetch<BudgetItem>('/api/budgets', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }),
+    update: (id: string, data: Partial<BudgetCreateInput>) =>
+      apiFetch<{ status: string }>(`/api/budgets/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(data),
+      }),
+    delete: (id: string) =>
+      apiFetch<{ status: string }>(`/api/budgets/${id}`, {
+        method: 'DELETE',
+      }),
+  },
+  goals: {
+    list: (status = 'all') =>
+      apiFetch<GoalListResponse>(`/api/goals?status=${status}`),
+    get: (id: string) =>
+      apiFetch<GoalItem>(`/api/goals/${id}`),
+    create: (data: GoalCreateInput) =>
+      apiFetch<GoalItem>('/api/goals', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }),
+    update: (id: string, data: Partial<GoalUpdateInput>) =>
+      apiFetch<{ status: string; milestone?: number }>(`/api/goals/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(data),
+      }),
+    delete: (id: string) =>
+      apiFetch<{ status: string }>(`/api/goals/${id}`, {
+        method: 'DELETE',
+      }),
+  },
   oracle: {
     query: (query: string, conversationId?: string) =>
       fetch(`${API_BASE}/api/oracle/query`, {
@@ -159,6 +199,82 @@ export interface OracleUsage {
   monthly_cost: number;
   cost_ceiling: number;
   is_pro: boolean;
+}
+
+export interface BudgetItem {
+  id: string;
+  category: string;
+  amount_limit: number;
+  spent: number;
+  remaining: number;
+  percent: number;
+  status: 'on_track' | 'warning' | 'over_budget';
+  period: string;
+  alert_threshold: number;
+  created_at: string | null;
+}
+
+export interface BudgetListResponse {
+  budgets: BudgetItem[];
+  health: number;
+  total: number;
+  on_track: number;
+}
+
+export interface BudgetDetail extends BudgetItem {
+  transactions: Array<{
+    id: string;
+    amount: number;
+    date: string;
+    merchant_name: string | null;
+    category: string | null;
+    pending: boolean;
+  }>;
+}
+
+export interface BudgetCreateInput {
+  category: string;
+  amount_limit: number;
+  period?: string;
+  alert_threshold?: number;
+}
+
+export interface GoalItem {
+  id: string;
+  name: string;
+  target_amount: number;
+  current_amount: number;
+  percent: number;
+  deadline: string | null;
+  linked_account_id: string | null;
+  status: string;
+  pace: {
+    status: 'on_track' | 'slightly_behind' | 'behind';
+    projected_date: string | null;
+  };
+  created_at: string | null;
+}
+
+export interface GoalListResponse {
+  active: GoalItem[];
+  completed: GoalItem[];
+  paused: GoalItem[];
+  total: number;
+}
+
+export interface GoalCreateInput {
+  name: string;
+  target_amount: number;
+  deadline?: string;
+  linked_account_id?: string;
+}
+
+export interface GoalUpdateInput {
+  name?: string;
+  target_amount?: number;
+  current_amount?: number;
+  deadline?: string;
+  status?: string;
 }
 
 export interface PlaidAccount {

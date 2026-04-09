@@ -8,12 +8,13 @@
 
 ## CALIBRATION SUMMARY (updated after every 3 gates)
 
-Gates completed: 6
-Overall estimate accuracy: Estimates averaged 12x actual (raw human estimates vs AI-assisted)
+Gates completed: 7
+Overall estimate accuracy: Estimates averaged 12.3x actual (raw human estimates vs AI-assisted)
 Systematic biases: All gates massively overestimated -- raw estimates assume solo human developer pace
 Recommended buffer: For AI-assisted development, use 10% of raw human estimate as starting point
 Plaid buffer status: +50% buffer was NOT needed -- managed SDK integration was straightforward
 Most complex gate (v0.5.0): 20 hrs est → 1.5 hrs actual. Even the biggest gate follows the pattern.
+CRUD gates: v0.6.0 confirms standard CRUD + screens gates take ~1.0 hrs AI-assisted regardless of endpoint count.
 
 ---
 
@@ -33,6 +34,36 @@ or correct these buffers after the first few gates.
 ---
 
 ## REFLEXION LOG (permanent -- never delete)
+
+### REFLEXION: v0.6.0 -- Budgets + Goals
+
+Date: 2026-04-09
+Project: Forge Finance
+
+ESTIMATE
+  Predicted: 14 hours
+  Actual:    1.0 hours
+  Variance:  -93%
+
+WHY OFF
+  Standard CRUD endpoints (10 total) + 4 screens with Recharts charts follow the exact same pattern as prior gates. Pre-existing models and schemas from v0.2.0 meant zero design iteration. Circular progress and pace calculation were simple math, not novel engineering.
+
+TECHNICAL PREDICTIONS VS REALITY
+  Predicted: Budget health aggregation complexity, goal pace calculation edge cases, celebration modal animation
+  Actual:    Health is count(on_track)/total; pace is linear projection from daily rate; celebration is CSS animation with prefers-reduced-motion check
+  Gap:       None of the predicted complexity materialized. CRUD + visualization gates are routine.
+
+CORRECTION FOR FUTURE
+  CRUD + screen gates with pre-decided schemas should estimate at 1.0 hrs AI-assisted, regardless of endpoint count.
+  Recharts integration is now a solved pattern — no additional buffer needed for chart-heavy gates.
+  The 14 hr estimate should be 1.0-1.5 hrs.
+
+MEMORY_SEMANTIC.md UPDATE
+  Pattern updated: none
+  Confidence change: no change
+  Estimate buffer added: no
+
+---
 
 ### REFLEXION: v0.5.0 -- Dashboard + @ORACLE
 

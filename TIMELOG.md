@@ -14,11 +14,18 @@
 | v0.3.0 | 10 | 1.0 | -90% | $150 |
 | v0.4.0 | 18 | 1.0 | -94% | $150 |
 | v0.5.0 | 20 | 1.5 | -93% | $225 |
-| **Total** | **72** | **6.0** | **-92%** | **$900** |
+| v0.6.0 | 14 | 1.0 | -93% | $150 |
+| **Total** | **86** | **7.0** | **-92%** | **$1,050** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-09 — Session 4 (v0.6.0)
+- Start: session begin
+- Duration: ~1.0 hrs
+- Gates completed: v0.6.0
+- Notes: 4 screens (Budgets, Budget Detail, Goals, Goal Detail) + 10 API endpoints + RadialBarChart + CircularProgress. 124 tests passing. Pace calculation and milestone detection for goals.
 
 ### 2026-04-09 — Session 3 (v0.5.0)
 - Start: session begin

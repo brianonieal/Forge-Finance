@@ -15,10 +15,26 @@
 | v0.3.0 Auth | 2026-04-09 | 10 | 1.0 | -90% | COMPLETE |
 | v0.4.0 Plaid + @SYNC | 2026-04-09 | 18 | 1.0 | -94% | COMPLETE |
 | v0.5.0 Dashboard + @ORACLE | 2026-04-09 | 20 | 1.5 | -93% | COMPLETE |
+| v0.6.0 Budgets + Goals | 2026-04-09 | 14 | 1.0 | -93% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v0.6.0 Budgets + Goals gate
+Event: v0.6.0 Budgets + Goals gate completed
+Deliverables:
+  - Screen 8: Budgets (/budgets) with RadialBarChart health ring, category progress bars, create modal
+  - Screen 9: Budget Detail (/budgets/:id) with spending trend AreaChart, filtered transactions
+  - Screen 10: Goals (/goals) with CircularProgressRing, pace indicators, celebration modal
+  - Screen 11: Goal Detail (/goals/:id) with 180px progress ring, contribution chart, actions
+  - Budget CRUD API: 5 endpoints (list, create, get, update, delete)
+  - Goal CRUD API: 5 endpoints (list, create, get, update, delete)
+  - Pace calculation with projected completion date
+  - Milestone detection (25/50/75/100%) + auto-complete
+  - 124 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.7.0 Notifications + Alerts
 
 ### 2026-04-09 — v0.5.0 Dashboard + @ORACLE gate
 Event: v0.5.0 Dashboard + @ORACLE gate completed

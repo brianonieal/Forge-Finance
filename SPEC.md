@@ -4,28 +4,24 @@
 
 ---
 
-## CURRENT GATE: v0.5.0 — Dashboard + @ORACLE
+## CURRENT GATE: v0.6.0 — Budgets + Goals
 
-**Purpose:** Core app experience — dashboard + AI agent
-**Est:** 20 hrs | Calibrated: 2.0 hrs AI-assisted
+**Purpose:** Budget tracking + savings goals with progress visualization
+**Est:** 14 hrs | Calibrated: 1.5 hrs AI-assisted
 
 ---
 
 ## DELIVERABLES
 
-- [ ] Screen 4: Dashboard — /dashboard (metrics, charts, recent transactions, period selector)
-- [ ] Screen 6: Account Detail — /accounts/:id (summary, balance chart, transactions)
-- [ ] Screen 7: Transactions — /transactions (full table, sort, filter, search, detail drawer)
-- [ ] Screen 12: @ORACLE Chat — /chat (mobile), sidebar panel (desktop)
-- [ ] @ORACLE agent: Haiku classifier → Sonnet reasoning pipeline
-- [ ] Voyage AI semantic search on transactions
-- [ ] LiteLLM routing + cost tracking
-- [ ] SSE streaming through FastAPI
-- [ ] agent_log cost tracking + $0.50/user/month ceiling
-- [ ] 10 query/month free tier limit enforcement
-- [ ] Dashboard API endpoints (metrics, spending-trend, category-breakdown)
-- [ ] Transaction API endpoints (list, detail, recategorize)
-- [ ] Tests: 89 cumulative (37 new)
+- [ ] Screen 8: Budgets — /budgets (health ring, category progress bars, create budget)
+- [ ] Screen 9: Budget Detail — /budgets/:id (spending trend chart, filtered transactions)
+- [ ] Screen 10: Goals — /goals (goal cards grid, circular progress, celebration modal, create goal)
+- [ ] Screen 11: Goal Detail — /goals/:id (progress header, contribution chart, actions)
+- [ ] Budget CRUD API: GET/POST /api/budgets, GET/PATCH/DELETE /api/budgets/:id
+- [ ] Goal CRUD API: GET/POST /api/goals, GET/PATCH/DELETE /api/goals/:id
+- [ ] Budget threshold notifications (70%, 90%, 100%)
+- [ ] Goal milestone triggers (25%, 50%, 75%, 100%)
+- [ ] Tests: 119 cumulative (35 new)
 
 ---
 
@@ -33,22 +29,22 @@
 
 | # | Screen | Route | Notes |
 |---|--------|-------|-------|
-| 4 | Dashboard | /dashboard | Metrics, charts, @ORACLE sidebar |
-| 6 | Account Detail | /accounts/:id | Balance history, filtered transactions |
-| 7 | Transactions | /transactions | Full table with sort/filter/search |
-| 12 | @ORACLE Chat | /chat, sidebar | SSE streaming, conversation history |
+| 8 | Budgets | /budgets | Health ring, category progress, create budget |
+| 9 | Budget Detail | /budgets/:id | Spending trend chart, filtered transactions |
+| 10 | Goals | /goals | Goal cards grid, circular progress, celebration |
+| 11 | Goal Detail | /goals/:id | Progress header, contribution chart, actions |
 
 ---
 
 ## ACCEPTANCE CRITERIA
 
-1. Dashboard shows net worth, daily P&L, budget health, top spend metrics
-2. Spending trend chart renders with period selector integration
-3. Category breakdown pie chart with dollar amounts in JetBrains Mono
-4. Recent transactions list shows 5 items with merchant, category, amount
-5. Account detail shows balance history chart and filtered transactions
-6. Transaction table supports sort by date/amount, filter by category, search
-7. @ORACLE responds to natural language queries via SSE streaming
-8. Conversation history persists across sessions
-9. Free tier enforces 10 query/month limit with upgrade prompt
+1. Budget health ring (RadialBarChart) shows overall on-track percentage
+2. Budget category rows show progress bars with alert threshold colors (0-70% green, 70-90% amber, 90-100% red)
+3. Budget amounts use JetBrains Mono ("$X of $Y" format)
+4. Budget detail shows spending trend AreaChart and filtered transactions
+5. Goal cards display CircularProgressRing (120px) with percentage inside
+6. Goal pace indicator shows on-track/behind status with projected date
+7. Celebration modal triggers on goal completion with confetti (respects prefers-reduced-motion)
+8. Create budget/goal modals with form validation
+9. Goal detail shows 180px progress ring and contribution history chart
 10. All financial numbers use JetBrains Mono (no exceptions)
