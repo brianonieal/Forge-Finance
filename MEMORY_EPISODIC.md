@@ -9,11 +9,27 @@
 
 | Gate | Date | Hrs Est | Hrs Actual | Variance | Result |
 |------|------|---------|------------|----------|--------|
-| [Populated as gates complete] | | | | | |
+| v0.0.0 Foundation | 2026-04-09 | 6 | 1.0 | -83% | COMPLETE |
+| v0.1.0 Scaffold | 2026-04-09 | 8 | 0.75 | -91% | COMPLETE |
+| v0.2.0 Data Layer | 2026-04-09 | 10 | 0.75 | -93% | COMPLETE |
+| v0.3.0 Auth | 2026-04-09 | 10 | 1.0 | -90% | COMPLETE |
 
 ---
 
 ## SESSION LOG (most recent first)
+
+### 2026-04-09 — v0.3.0 Auth gate
+Event: v0.3.0 Auth gate completed
+Deliverables:
+  - Supabase Auth (Google OAuth + Magic Link)
+  - Screen 2: Auth (/login, /register, /reset-password)
+  - Screen 17: Settings (5 sub-pages)
+  - ProtectedRoute + AuthProvider + useAuthStore
+  - FastAPI JWT auth middleware
+  - Settings API router (7 endpoints)
+  - 36 tests passing (cumulative)
+Status: GATE COMPLETE
+Next session: /start → option 2 → resume at v0.4.0 Plaid + @SYNC
 
 ### 2026-04-09 — v0.2.0 Data Layer gate
 Event: v0.2.0 Data Layer gate completed

@@ -8,5 +8,5 @@ async def test_health_endpoint(client: AsyncClient):
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "healthy"
-    assert data["version"] == "0.2.0"
+    assert data["version"] == "0.3.0"
     assert "database" in data

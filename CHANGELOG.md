@@ -4,6 +4,27 @@
 
 ---
 
+## [0.3.0] — 2026-04-09
+
+### Added
+- Supabase Auth client setup (frontend @supabase/ssr + backend python-jose)
+- useAuthStore (Zustand): session management, Google OAuth, Magic Link sign-in
+- AuthProvider: initializes auth state on app load
+- ProtectedRoute: redirects unauthenticated users to /login
+- Screen 2 — Auth: /login, /register, /reset-password with AuthCard component
+  - Google OAuth button, magic link email flow, success state
+- Screen 17 — Settings with 5 sub-pages:
+  - /settings/profile: avatar, name, email
+  - /settings/security: 2FA placeholder, active sessions, delete account
+  - /settings/preferences: currency, number format, date format, default period
+  - /settings/notifications: toggle switches for all alert types, weekly digest
+  - /settings/connected-apps: empty state with connect button
+- FastAPI auth middleware: JWT verification via Supabase JWT secret
+- Settings API router: 7 endpoints (GET/PATCH profile, preferences, notifications, sessions, connected-apps)
+- 36 tests passing (7 new auth tests)
+
+---
+
 ## [0.2.0] — 2026-04-09
 
 ### Added

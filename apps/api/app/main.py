@@ -3,10 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.database import engine
+from app.routers.settings import router as settings_router
 
 app = FastAPI(
     title="Forge Finance API",
-    version="0.2.0",
+    version="0.3.0",
     docs_url="/docs" if settings.debug else None,
     redoc_url=None,
 )
@@ -18,6 +19,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+app.include_router(settings_router)
 
 
 @app.get("/health")
@@ -33,6 +37,6 @@ async def health_check():
 
     return {
         "status": "healthy",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "database": db_status,
     }

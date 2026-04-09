@@ -18,7 +18,9 @@
       "Bash(.venv/Scripts/python -c \"from app.models import User, Account, Transaction, Category, Budget, Goal, SyncLog, AgentLog, Conversation; print\\('All 9 models loaded successfully'\\); print\\('Tables:', [m.__tablename__ for m in [User, Account, Transaction, Category, Budget, Goal, SyncLog, AgentLog, Conversation]]\\)\")",
       "Bash(.venv/Scripts/python -m pytest tests/ -v --tb=short)",
       "Bash(.venv/Scripts/ruff check:*)",
-      "Bash(.venv/Scripts/ruff format:*)"
+      "Bash(.venv/Scripts/ruff format:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
     ]
   }
 }
