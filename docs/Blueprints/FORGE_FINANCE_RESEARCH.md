@@ -1,7 +1,6 @@
 # FORGE FINANCE RESEARCH
 # Competitive Intelligence + Receipt Scanning + Open-Source AI Stack
 # Researched: April 8, 2026
-# Author: Brian Onieal | Freelance AI Systems Engineer
 
 ---
 

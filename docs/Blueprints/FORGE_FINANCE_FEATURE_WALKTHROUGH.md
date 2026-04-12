@@ -1,7 +1,6 @@
 # FORGE FINANCE: PAGE-BY-PAGE FEATURE WALKTHROUGH
 # Updated with Research Findings + New Screens + Family Feature
 # Date: April 8, 2026
-# Author: Brian Onieal
 
 ---
 
