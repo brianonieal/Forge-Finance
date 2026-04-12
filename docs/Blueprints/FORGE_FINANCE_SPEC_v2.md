@@ -1,6 +1,5 @@
 # FORGE FINANCE — Complete App Specification (Updated)
 # Version: v0.0.0 through v5.0.0 "Apex"
-# Author: Brian Onieal | Freelance AI Systems Engineer
 # Date: April 2026 (Updated with Receipt Intelligence + Family Features)
 # Purpose: /start intake description for Claude Code
 
@@ -294,7 +293,7 @@ WAITLIST SIGNUP (centered section):
 FOOTER:
 - Forge Finance logo
 - Links: Privacy Policy, Terms of Service, Contact
-- "Built by Brian Onieal" attribution
+- Attribution
 
 **Backend:** No auth required. Waitlist emails stored in Supabase waitlist table (email, created_at, referral_source). Rate-limited to prevent spam.
 **AI:** None on this page.

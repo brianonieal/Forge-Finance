@@ -5,7 +5,7 @@
 
 ---
 
-## UNIVERSAL PRE-FILLS (Brian's projects)
+## UNIVERSAL PRE-FILLS
 
 ```
 deployment_frontend:    Vercel
@@ -17,7 +17,6 @@ frontend_stack:         Next.js 15 + TypeScript + Tailwind + shadcn/ui
 state_management:       Zustand + TanStack Query v5
 ai_primary:             Claude Sonnet 4.6
 ai_free_tier:           Qwen 2.5 Coder 32B via LiteLLM
-billing_rate:           $150/hr
 testing_backend:        Pytest
 testing_frontend:       Vitest + React Testing Library
 testing_e2e:            Playwright (from v3.0.0+)

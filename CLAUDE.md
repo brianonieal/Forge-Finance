@@ -7,7 +7,6 @@
 ## IDENTITY
 
 App: Forge Finance
-Owner: Brian Onieal
 Version: 0.0.0 (Foundation)
 Blueprint: v10
 
@@ -28,7 +27,7 @@ cd apps/api && .venv/Scripts/activate && uvicorn app.main:app --reload
 ## PROJECT STRUCTURE
 
 ```
-D:\Forge-Finance\
+./
 ├── apps/
 │   ├── web/          # Next.js 14+ (App Router, TypeScript, Tailwind)
 │   └── api/          # FastAPI (Python 3.11+, SQLAlchemy, Alembic)
