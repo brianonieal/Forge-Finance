@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { User, Shield, Sliders, Bell, Plug } from "lucide-react";
+import { User, Shield, Sliders, Bell, Plug, CreditCard } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const settingsNav = [
   { label: "Profile", href: "/settings/profile", icon: User },
   { label: "Security", href: "/settings/security", icon: Shield },
+  { label: "Billing", href: "/settings/billing", icon: CreditCard },
   { label: "Preferences", href: "/settings/preferences", icon: Sliders },
   { label: "Notifications", href: "/settings/notifications", icon: Bell },
   { label: "Connected Apps", href: "/settings/connected-apps", icon: Plug },

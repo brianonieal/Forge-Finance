@@ -4,6 +4,53 @@
 
 ---
 
+## [5.0.0] "Apex" — 2026-04-16
+
+### Added
+- Stripe billing integration (Checkout + Customer Portal + webhooks)
+  - `app/services/stripe_service.py` — SDK wrapper (Customer, Checkout, Portal, Subscription, Invoice, webhook signature)
+  - `app/routers/billing.py` — 4 authenticated endpoints + webhook handler
+    - `POST /api/billing/create-checkout-session`
+    - `POST /api/billing/create-portal-session`
+    - `GET  /api/billing/subscription`
+    - `GET  /api/billing/invoices`
+    - `POST /api/webhooks/stripe`
+  - Webhook signature verification via `stripe.Webhook.construct_event`
+  - Webhook idempotency via agent_log dedup (event_id stored in query column)
+  - Subscription event handlers: created → plan="pro", updated → status mapping, deleted → plan="free"
+  - Customer creation lazy/check-then-create — never duplicates
+- Alembic migration 002: unique partial index on `users.stripe_customer_id` (`WHERE NOT NULL`)
+- Stripe config: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_ID_PRO` in Settings
+- `stripe==15.0.1` added to requirements.txt
+- Screen 18 — Subscription & Billing: `/settings/billing`
+  - PlanCard component (current plan + Upgrade/Manage CTAs + period end date)
+  - PlanComparisonTable component (Free vs Pro features + monthly price)
+  - PaymentHistoryTable component (Pro only, with hosted invoice links)
+  - CancellationModal component (retention copy + Continue to Stripe button)
+  - Billing nav entry added to settings sidebar
+- Frontend `api.billing.*` methods + `BillingSubscription` / `InvoiceItem` types
+- Version bumped to 5.0.0 (main.py + health endpoint)
+- 46 new tests (31 backend + 15 frontend) — 264 total (147 backend + 117 frontend)
+
+### Fixed
+- Synced `apps/api/.env.example` with actual Settings class (was missing 9 vars)
+- Synced `apps/web/.env.example` with `NEXT_PUBLIC_SENTRY_DSN`
+- Renamed `VOYAGEAI_API_KEY` → `VOYAGE_API_KEY` in root `.env.example` (matches `settings.voyage_api_key`)
+- Removed `PLAID_WEBHOOK_SECRET` from templates (Plaid uses JWT verification, no shared secret)
+- Marked `ANTHROPIC_API_KEY` and `LITELLM_MASTER_KEY` as deferred-future in template (oracle_agent currently uses hardcoded responses)
+
+### Deferred to v5.1.0
+- Annual billing toggle ($90/year, save 17%)
+
+### Ops Tasks (manual, before production)
+- Set 15 backend env vars in Render dashboard
+- Set 4 frontend env vars in Vercel dashboard
+- Create Stripe Pro Product + Price ID
+- Configure Stripe webhook endpoint pointing at `/api/webhooks/stripe`
+- Provision production Plaid credentials and switch `PLAID_ENV=production`
+
+---
+
 ## [1.0.0] "Genesis" — 2026-04-09
 
 ### Added

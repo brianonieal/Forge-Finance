@@ -19,11 +19,18 @@
 | v2.0.0 | 16 | 1.0 | -94% |
 | v3.0.0 | 14 | 0.75 | -95% |
 | v4.0.0 | 12 | 0.75 | -94% |
-| **Total** | **138** | **10.0** | **-93%** |
+| v5.0.0 | 14 | 1.25 | -91% |
+| **Total** | **152** | **11.25** | **-93%** |
 
 ---
 
 ## SESSION LOG
+
+### 2026-04-16 — Session 9 (v5.0.0)
+- Start: session begin
+- Duration: ~1.25 hrs
+- Gates completed: v5.0.0
+- Notes: Stripe billing integration (Checkout + Customer Portal + webhook with signature verification + idempotency), Screen 18 (/settings/billing) with 4 components (PlanCard, PlanComparisonTable, PaymentHistoryTable, CancellationModal), 4 backend endpoints + webhook handler, Alembic migration 002 for unique index on stripe_customer_id, env template audit + sync (renamed VOYAGEAI_API_KEY → VOYAGE_API_KEY, removed dead PLAID_WEBHOOK_SECRET, added missing SUPABASE_JWT_SECRET and NEXT_PUBLIC_SENTRY_DSN). 46 new tests (31 backend + 15 frontend) — 264 total. Annual billing deferred to v5.1.0.
 
 ### 2026-04-09 — Session 8 (v4.0.0)
 - Start: session begin

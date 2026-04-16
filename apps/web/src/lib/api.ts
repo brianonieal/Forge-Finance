@@ -179,7 +179,45 @@ export const api = {
     getUsage: () =>
       apiFetch<OracleUsage>('/api/oracle/usage'),
   },
+  billing: {
+    getSubscription: () =>
+      apiFetch<BillingSubscription>('/api/billing/subscription'),
+    getInvoices: () =>
+      apiFetch<{ invoices: InvoiceItem[] }>('/api/billing/invoices'),
+    createCheckoutSession: (successUrl: string, cancelUrl: string) =>
+      apiFetch<{ id: string; url: string }>('/api/billing/create-checkout-session', {
+        method: 'POST',
+        body: JSON.stringify({ success_url: successUrl, cancel_url: cancelUrl }),
+      }),
+    createPortalSession: (returnUrl: string) =>
+      apiFetch<{ url: string }>('/api/billing/create-portal-session', {
+        method: 'POST',
+        body: JSON.stringify({ return_url: returnUrl }),
+      }),
+  },
 };
+
+export interface BillingSubscription {
+  plan: 'free' | 'pro';
+  subscription: {
+    id: string;
+    status: string;
+    current_period_end: number;
+    cancel_at_period_end: boolean;
+  } | null;
+}
+
+export interface InvoiceItem {
+  id: string;
+  amount_paid: number;
+  currency: string;
+  status: string;
+  created: number;
+  hosted_invoice_url: string | null;
+  invoice_pdf: string | null;
+  period_start: number;
+  period_end: number;
+}
 
 export interface DashboardMetrics {
   net_worth: number;

@@ -12,6 +12,8 @@ if settings.sentry_dsn:
         environment="production" if not settings.debug else "development",
     )
 from app.routers.alerts import router as alerts_router
+from app.routers.billing import router as billing_router
+from app.routers.billing import webhook_router as stripe_webhook_router
 from app.routers.budgets import router as budgets_router
 from app.routers.dashboard import router as dashboard_router
 from app.routers.goals import router as goals_router
@@ -26,7 +28,7 @@ from app.routers.transactions import router as transactions_router
 
 app = FastAPI(
     title="Forge Finance API",
-    version="4.0.0",
+    version="5.0.0",
     docs_url="/docs" if settings.debug else None,
     redoc_url=None,
 )
@@ -52,6 +54,8 @@ app.include_router(reports_router)
 app.include_router(alerts_router)
 app.include_router(investments_router)
 app.include_router(net_worth_router)
+app.include_router(billing_router)
+app.include_router(stripe_webhook_router)
 
 
 @app.get("/health")
@@ -67,6 +71,6 @@ async def health_check():
 
     return {
         "status": "healthy",
-        "version": "4.0.0",
+        "version": "5.0.0",
         "database": db_status,
     }

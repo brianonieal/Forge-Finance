@@ -330,6 +330,7 @@ Calibrated (context overhead + debug buffer): ~190 hrs
 
 ## CURRENT STATUS
 
-Active gate: v0.0.0 Foundation
-Next task: Begin foundation build
+Last completed gate: v5.0.0 Apex (Stripe Billing + Production Launch) ✓ 2026-04-16
+Next gate: v5.1.0 (annual billing toggle, deferred from v5.0.0) or v6.0.0+
 Blueprint v10: Active
+Tests cumulative: 264 (147 backend + 117 frontend)

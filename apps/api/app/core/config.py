@@ -24,6 +24,11 @@ class Settings(BaseSettings):
     # Sentry
     sentry_dsn: str = ""
 
+    # Stripe (v5.0.0 Apex)
+    stripe_secret_key: str = ""
+    stripe_webhook_secret: str = ""
+    stripe_price_id_pro: str = ""
+
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
 

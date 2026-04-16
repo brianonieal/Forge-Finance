@@ -4,13 +4,26 @@
 
 ---
 
-## CURRENT GATE: v4.0.0 — "Forge" (Performance + Accessibility + Beta) ✓
+## CURRENT GATE: v5.0.0 — "Apex" (Stripe Billing + Production Launch) ✓
 
 ### All Tasks Complete
 
 ---
 
+## NEXT GATE: v5.1.0 (suggested)
+
+- [ ] Annual billing toggle ($90/year, save 17%) — deferred from v5.0.0
+- [ ] Update PlanCard with monthly/annual toggle
+- [ ] Add second STRIPE_PRICE_ID_PRO_ANNUAL env var
+- [ ] Stripe checkout session accepts price_id selection
+- [ ] Tests for both billing periods
+
+---
+
 ## COMPLETED GATES
+
+### v5.0.0 — Apex (Stripe Billing + Production Launch) ✓
+Completed 2026-04-16. Stripe Checkout + Customer Portal + webhook (signature + idempotency), Screen 18 (/settings/billing) with 4 components, Alembic 002, env template audit. 264 tests (147 backend + 117 frontend). Annual toggle deferred to v5.1.0.
 
 ### v4.0.0 — Forge (Performance + Accessibility + Beta) ✓
 Completed 2026-04-09. 2FA TOTP flow, skip-nav, focus-visible, beta access gate, 218 tests.

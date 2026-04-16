@@ -1,14 +1,14 @@
-"""Tests for v4.0.0 performance and accessibility API requirements."""
+"""Tests for performance and accessibility API requirements (added at v4.0.0)."""
 
 import pytest
 from httpx import AsyncClient
 
 
 @pytest.mark.asyncio
-async def test_version_is_4(client: AsyncClient):
-    """Version should be 4.0.0 for this gate."""
+async def test_version_is_current(client: AsyncClient):
+    """Version reported by /health matches the current gate."""
     response = await client.get("/health")
-    assert response.json()["version"] == "4.0.0"
+    assert response.json()["version"] == "5.0.0"
 
 
 @pytest.mark.asyncio
